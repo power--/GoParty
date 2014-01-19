@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC122AB61886C08F006DB770 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AC122AB21886C08F006DB770 /* icon.png */; };
+		AC122AB71886C08F006DB770 /* mobile_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC122AB31886C08F006DB770 /* mobile_logo.jpg */; };
+		AC122AB81886C08F006DB770 /* qq_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC122AB41886C08F006DB770 /* qq_logo.jpg */; };
+		AC122AB91886C08F006DB770 /* wechat_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC122AB51886C08F006DB770 /* wechat_logo.jpg */; };
+		AC19F139187C391900E17D98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC19F138187C391900E17D98 /* Foundation.framework */; };
+		AC19F13B187C391900E17D98 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC19F13A187C391900E17D98 /* CoreGraphics.framework */; };
+		AC19F13D187C391900E17D98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC19F13C187C391900E17D98 /* UIKit.framework */; };
+		AC19F143187C391900E17D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC19F141187C391900E17D98 /* InfoPlist.strings */; };
+		AC19F145187C391900E17D98 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC19F144187C391900E17D98 /* main.m */; };
+		AC19F149187C391900E17D98 /* goPartyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC19F148187C391900E17D98 /* goPartyAppDelegate.m */; };
+		AC19F14F187C391900E17D98 /* goPartyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC19F14E187C391900E17D98 /* goPartyViewController.m */; };
+		AC19F151187C391900E17D98 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC19F150187C391900E17D98 /* Images.xcassets */; };
+		AC19F158187C391900E17D98 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC19F157187C391900E17D98 /* XCTest.framework */; };
+		AC19F159187C391900E17D98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC19F138187C391900E17D98 /* Foundation.framework */; };
+		AC19F15A187C391900E17D98 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC19F13C187C391900E17D98 /* UIKit.framework */; };
+		AC19F162187C391900E17D98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC19F160187C391900E17D98 /* InfoPlist.strings */; };
+		AC19F164187C391900E17D98 /* GoPartyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC19F163187C391900E17D98 /* GoPartyTests.m */; };
+		AC19F174187C3D5600E17D98 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC19F173187C3D5600E17D98 /* LoginViewController.m */; };
+		AC2D70C5187ED3A100A5D5C9 /* ActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2D70C4187ED3A100A5D5C9 /* ActionViewController.m */; };
+		AC2D70C8187ED3F000A5D5C9 /* AddressListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2D70C7187ED3F000A5D5C9 /* AddressListViewController.m */; };
+		AC2D70CB187EE26400A5D5C9 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2D70CA187EE26400A5D5C9 /* UserInfoViewController.m */; };
+		AC2D70CE187EE80B00A5D5C9 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2D70CD187EE80B00A5D5C9 /* MainTabBarViewController.m */; };
+		AC4318CB187D85A70046C7CC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4318CA187D85A70046C7CC /* Login.storyboard */; };
+		AC4318DB187D8D510046C7CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4318DA187D8D510046C7CC /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC19F15B187C391900E17D98 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC19F12D187C391900E17D98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC19F134187C391900E17D98;
+			remoteInfo = GoParty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC122AB21886C08F006DB770 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = image/icon.png; sourceTree = SOURCE_ROOT; };
+		AC122AB31886C08F006DB770 /* mobile_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = mobile_logo.jpg; path = image/mobile_logo.jpg; sourceTree = SOURCE_ROOT; };
+		AC122AB41886C08F006DB770 /* qq_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = qq_logo.jpg; path = image/qq_logo.jpg; sourceTree = SOURCE_ROOT; };
+		AC122AB51886C08F006DB770 /* wechat_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = wechat_logo.jpg; path = image/wechat_logo.jpg; sourceTree = SOURCE_ROOT; };
+		AC19F135187C391900E17D98 /* GoParty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoParty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC19F138187C391900E17D98 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AC19F13A187C391900E17D98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AC19F13C187C391900E17D98 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AC19F140187C391900E17D98 /* GoParty-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoParty-Info.plist"; sourceTree = "<group>"; };
+		AC19F142187C391900E17D98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AC19F144187C391900E17D98 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AC19F146187C391900E17D98 /* GoParty-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GoParty-Prefix.pch"; sourceTree = "<group>"; };
+		AC19F147187C391900E17D98 /* goPartyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goPartyAppDelegate.h; sourceTree = "<group>"; };
+		AC19F148187C391900E17D98 /* goPartyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = goPartyAppDelegate.m; sourceTree = "<group>"; };
+		AC19F14D187C391900E17D98 /* goPartyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = goPartyViewController.h; sourceTree = "<group>"; };
+		AC19F14E187C391900E17D98 /* goPartyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = goPartyViewController.m; sourceTree = "<group>"; };
+		AC19F150187C391900E17D98 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AC19F156187C391900E17D98 /* GoPartyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoPartyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC19F157187C391900E17D98 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AC19F15F187C391900E17D98 /* GoPartyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoPartyTests-Info.plist"; sourceTree = "<group>"; };
+		AC19F161187C391900E17D98 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AC19F163187C391900E17D98 /* GoPartyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoPartyTests.m; sourceTree = "<group>"; };
+		AC19F172187C3D5600E17D98 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		AC19F173187C3D5600E17D98 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		AC2D70C3187ED3A100A5D5C9 /* ActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionViewController.h; sourceTree = "<group>"; };
+		AC2D70C4187ED3A100A5D5C9 /* ActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionViewController.m; sourceTree = "<group>"; };
+		AC2D70C6187ED3F000A5D5C9 /* AddressListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressListViewController.h; sourceTree = "<group>"; };
+		AC2D70C7187ED3F000A5D5C9 /* AddressListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressListViewController.m; sourceTree = "<group>"; };
+		AC2D70C9187EE26400A5D5C9 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		AC2D70CA187EE26400A5D5C9 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		AC2D70CC187EE80B00A5D5C9 /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
+		AC2D70CD187EE80B00A5D5C9 /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
+		AC4318CA187D85A70046C7CC /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		AC4318DA187D8D510046C7CC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC19F132187C391900E17D98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC19F13B187C391900E17D98 /* CoreGraphics.framework in Frameworks */,
+				AC19F13D187C391900E17D98 /* UIKit.framework in Frameworks */,
+				AC19F139187C391900E17D98 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC19F153187C391900E17D98 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC19F158187C391900E17D98 /* XCTest.framework in Frameworks */,
+				AC19F15A187C391900E17D98 /* UIKit.framework in Frameworks */,
+				AC19F159187C391900E17D98 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC19F12C187C391900E17D98 = {
+			isa = PBXGroup;
+			children = (
+				AC19F13E187C391900E17D98 /* GoParty */,
+				AC19F15D187C391900E17D98 /* GoPartyTests */,
+				AC19F137187C391900E17D98 /* Frameworks */,
+				AC19F136187C391900E17D98 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC19F136187C391900E17D98 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC19F135187C391900E17D98 /* GoParty.app */,
+				AC19F156187C391900E17D98 /* GoPartyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC19F137187C391900E17D98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC19F138187C391900E17D98 /* Foundation.framework */,
+				AC19F13A187C391900E17D98 /* CoreGraphics.framework */,
+				AC19F13C187C391900E17D98 /* UIKit.framework */,
+				AC19F157187C391900E17D98 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC19F13E187C391900E17D98 /* GoParty */ = {
+			isa = PBXGroup;
+			children = (
+				AC19F147187C391900E17D98 /* goPartyAppDelegate.h */,
+				AC19F148187C391900E17D98 /* goPartyAppDelegate.m */,
+				AC19F14D187C391900E17D98 /* goPartyViewController.h */,
+				AC19F14E187C391900E17D98 /* goPartyViewController.m */,
+				AC4318CA187D85A70046C7CC /* Login.storyboard */,
+				AC19F172187C3D5600E17D98 /* LoginViewController.h */,
+				AC19F173187C3D5600E17D98 /* LoginViewController.m */,
+				AC4318DA187D8D510046C7CC /* Main.storyboard */,
+				AC2D70CC187EE80B00A5D5C9 /* MainTabBarViewController.h */,
+				AC2D70CD187EE80B00A5D5C9 /* MainTabBarViewController.m */,
+				AC2D70C3187ED3A100A5D5C9 /* ActionViewController.h */,
+				AC2D70C4187ED3A100A5D5C9 /* ActionViewController.m */,
+				AC2D70C6187ED3F000A5D5C9 /* AddressListViewController.h */,
+				AC2D70C7187ED3F000A5D5C9 /* AddressListViewController.m */,
+				AC2D70C9187EE26400A5D5C9 /* UserInfoViewController.h */,
+				AC2D70CA187EE26400A5D5C9 /* UserInfoViewController.m */,
+				AC19F150187C391900E17D98 /* Images.xcassets */,
+				AC19F13F187C391900E17D98 /* Supporting Files */,
+			);
+			path = GoParty;
+			sourceTree = "<group>";
+		};
+		AC19F13F187C391900E17D98 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC4318CD187D879F0046C7CC /* Mockups */,
+				AC19F140187C391900E17D98 /* GoParty-Info.plist */,
+				AC19F141187C391900E17D98 /* InfoPlist.strings */,
+				AC19F144187C391900E17D98 /* main.m */,
+				AC19F146187C391900E17D98 /* GoParty-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC19F15D187C391900E17D98 /* GoPartyTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC19F163187C391900E17D98 /* GoPartyTests.m */,
+				AC19F15E187C391900E17D98 /* Supporting Files */,
+			);
+			path = GoPartyTests;
+			sourceTree = "<group>";
+		};
+		AC19F15E187C391900E17D98 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC19F15F187C391900E17D98 /* GoPartyTests-Info.plist */,
+				AC19F160187C391900E17D98 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AC4318CD187D879F0046C7CC /* Mockups */ = {
+			isa = PBXGroup;
+			children = (
+				AC122AB21886C08F006DB770 /* icon.png */,
+				AC122AB31886C08F006DB770 /* mobile_logo.jpg */,
+				AC122AB41886C08F006DB770 /* qq_logo.jpg */,
+				AC122AB51886C08F006DB770 /* wechat_logo.jpg */,
+			);
+			name = Mockups;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC19F134187C391900E17D98 /* GoParty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC19F167187C391900E17D98 /* Build configuration list for PBXNativeTarget "GoParty" */;
+			buildPhases = (
+				AC19F131187C391900E17D98 /* Sources */,
+				AC19F132187C391900E17D98 /* Frameworks */,
+				AC19F133187C391900E17D98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoParty;
+			productName = GoParty;
+			productReference = AC19F135187C391900E17D98 /* GoParty.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC19F155187C391900E17D98 /* GoPartyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC19F16A187C391900E17D98 /* Build configuration list for PBXNativeTarget "GoPartyTests" */;
+			buildPhases = (
+				AC19F152187C391900E17D98 /* Sources */,
+				AC19F153187C391900E17D98 /* Frameworks */,
+				AC19F154187C391900E17D98 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC19F15C187C391900E17D98 /* PBXTargetDependency */,
+			);
+			name = GoPartyTests;
+			productName = GoPartyTests;
+			productReference = AC19F156187C391900E17D98 /* GoPartyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC19F12D187C391900E17D98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = goParty;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = goParty;
+				TargetAttributes = {
+					AC19F155187C391900E17D98 = {
+						TestTargetID = AC19F134187C391900E17D98;
+					};
+				};
+			};
+			buildConfigurationList = AC19F130187C391900E17D98 /* Build configuration list for PBXProject "GoParty" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC19F12C187C391900E17D98;
+			productRefGroup = AC19F136187C391900E17D98 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC19F134187C391900E17D98 /* GoParty */,
+				AC19F155187C391900E17D98 /* GoPartyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC19F133187C391900E17D98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC4318CB187D85A70046C7CC /* Login.storyboard in Resources */,
+				AC122AB61886C08F006DB770 /* icon.png in Resources */,
+				AC122AB91886C08F006DB770 /* wechat_logo.jpg in Resources */,
+				AC122AB71886C08F006DB770 /* mobile_logo.jpg in Resources */,
+				AC4318DB187D8D510046C7CC /* Main.storyboard in Resources */,
+				AC19F151187C391900E17D98 /* Images.xcassets in Resources */,
+				AC122AB81886C08F006DB770 /* qq_logo.jpg in Resources */,
+				AC19F143187C391900E17D98 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC19F154187C391900E17D98 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC19F162187C391900E17D98 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC19F131187C391900E17D98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC19F174187C3D5600E17D98 /* LoginViewController.m in Sources */,
+				AC19F145187C391900E17D98 /* main.m in Sources */,
+				AC19F14F187C391900E17D98 /* goPartyViewController.m in Sources */,
+				AC19F149187C391900E17D98 /* goPartyAppDelegate.m in Sources */,
+				AC2D70C5187ED3A100A5D5C9 /* ActionViewController.m in Sources */,
+				AC2D70CE187EE80B00A5D5C9 /* MainTabBarViewController.m in Sources */,
+				AC2D70CB187EE26400A5D5C9 /* UserInfoViewController.m in Sources */,
+				AC2D70C8187ED3F000A5D5C9 /* AddressListViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC19F152187C391900E17D98 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC19F164187C391900E17D98 /* GoPartyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC19F15C187C391900E17D98 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC19F134187C391900E17D98 /* GoParty */;
+			targetProxy = AC19F15B187C391900E17D98 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AC19F141187C391900E17D98 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC19F142187C391900E17D98 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AC19F160187C391900E17D98 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AC19F161187C391900E17D98 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AC19F165187C391900E17D98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AC19F166187C391900E17D98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC19F168187C391900E17D98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhou Chao (YQM65EYFYS)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoParty/GoParty-Prefix.pch";
+				INFOPLIST_FILE = "GoParty/GoParty-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "738F3CAD-74C9-40D3-B6A5-DF691339053C";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AC19F169187C391900E17D98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zhou Chao (YQM65EYFYS)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoParty/GoParty-Prefix.pch";
+				INFOPLIST_FILE = "GoParty/GoParty-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "738F3CAD-74C9-40D3-B6A5-DF691339053C";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AC19F16B187C391900E17D98 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GoParty.app/GoParty";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoParty/GoParty-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GoPartyTests/GoPartyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AC19F16C187C391900E17D98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GoParty.app/GoParty";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GoParty/GoParty-Prefix.pch";
+				INFOPLIST_FILE = "GoPartyTests/GoPartyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC19F130187C391900E17D98 /* Build configuration list for PBXProject "GoParty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC19F165187C391900E17D98 /* Debug */,
+				AC19F166187C391900E17D98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC19F167187C391900E17D98 /* Build configuration list for PBXNativeTarget "GoParty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC19F168187C391900E17D98 /* Debug */,
+				AC19F169187C391900E17D98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC19F16A187C391900E17D98 /* Build configuration list for PBXNativeTarget "GoPartyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC19F16B187C391900E17D98 /* Debug */,
+				AC19F16C187C391900E17D98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC19F12D187C391900E17D98 /* Project object */;
+}
