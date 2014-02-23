@@ -5,36 +5,52 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>3E540AF4-E8A4-4F77-B47E-9E22E90BFA81</string>
+	<string>64096168-74D0-4A4A-B4FE-C0006702EC70</string>
 	<key>IDESourceControlProjectName</key>
 	<string>GoParty</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>CD66443C-DAB5-494A-977B-650CAEC5B1C9</key>
-		<string>https://github.com/sbDiors/GoPartyIOSApp.git</string>
+		<key>47DDDE2C-6FF5-4E83-A690-0E740954C348</key>
+		<string>https://github.com/power--/GoParty.git</string>
+		<key>AB1677BE-95DB-48E5-A931-C381E937DAE9</key>
+		<string>https://github.com/pokeb/asi-http-request.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GoParty/GoParty.xcodeproj/project.xcworkspace</string>
+	<string>GoParty.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>CD66443C-DAB5-494A-977B-650CAEC5B1C9</key>
-		<string>../../..</string>
+		<key>47DDDE2C-6FF5-4E83-A690-0E740954C348</key>
+		<string>../..</string>
+		<key>510B7B97-BCF4-4EDF-B2D8-CDF77953274D</key>
+		<string>../../Vendor/facebook-ios-sdk/vendor/OCHamcrest</string>
+		<key>5BDFE100-6491-4484-AF5D-48BB2AE23C28</key>
+		<string>../../Vendor/facebook-ios-sdk/vendor/OHHTTPStubs</string>
+		<key>AB1677BE-95DB-48E5-A931-C381E937DAE9</key>
+		<string>../../ASIHttpRequest</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/sbDiors/GoPartyIOSApp.git</string>
+	<string>https://github.com/power--/GoParty.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>CD66443C-DAB5-494A-977B-650CAEC5B1C9</string>
+	<string>47DDDE2C-6FF5-4E83-A690-0E740954C348</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>CD66443C-DAB5-494A-977B-650CAEC5B1C9</string>
+			<string>AB1677BE-95DB-48E5-A931-C381E937DAE9</string>
 			<key>IDESourceControlWCCName</key>
-			<string>GoPartyIOSApp</string>
+			<string>ASIHttpRequest</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>47DDDE2C-6FF5-4E83-A690-0E740954C348</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GoParty</string>
 		</dict>
 	</array>
 </dict>
