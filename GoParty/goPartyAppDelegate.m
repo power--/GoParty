@@ -8,6 +8,7 @@
 
 #import "goPartyAppDelegate.h"
 #import <TencentOpenAPI/TencentOAuth.h>
+#import "GlobalTokenManager.h"
 
 @implementation goPartyAppDelegate
 

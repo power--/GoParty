@@ -93,6 +93,11 @@
 		CA13B57C18D0ADC5009209C9 /* AFGoPartyApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B57B18D0ADC5009209C9 /* AFGoPartyApiClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CA13B58118D0ADD4009209C9 /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B57E18D0ADD4009209C9 /* EventModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CA13B58218D0ADD4009209C9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B58018D0ADD4009209C9 /* UserModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA13B58618D0B8B1009209C9 /* GlobalTokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B58518D0B8B1009209C9 /* GlobalTokenManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA13B58918D0BDCC009209C9 /* ErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B58818D0BDCC009209C9 /* ErrorModel.m */; };
+		CA13B58C18D0BE94009209C9 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B58B18D0BE94009209C9 /* EventCategory.m */; };
+		CA13B59018D2038B009209C9 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B58F18D2038B009209C9 /* Jastor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA13B59318D204EF009209C9 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B59218D204EF009209C9 /* JastorRuntimeHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +227,16 @@
 		CA13B57E18D0ADD4009209C9 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		CA13B57F18D0ADD4009209C9 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		CA13B58018D0ADD4009209C9 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		CA13B58418D0B8B1009209C9 /* GlobalTokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalTokenManager.h; sourceTree = "<group>"; };
+		CA13B58518D0B8B1009209C9 /* GlobalTokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalTokenManager.m; sourceTree = "<group>"; };
+		CA13B58718D0BDCC009209C9 /* ErrorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ErrorModel.h; sourceTree = "<group>"; };
+		CA13B58818D0BDCC009209C9 /* ErrorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorModel.m; sourceTree = "<group>"; };
+		CA13B58A18D0BE94009209C9 /* EventCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCategory.h; sourceTree = "<group>"; };
+		CA13B58B18D0BE94009209C9 /* EventCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCategory.m; sourceTree = "<group>"; };
+		CA13B58E18D2038B009209C9 /* Jastor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jastor.h; sourceTree = "<group>"; };
+		CA13B58F18D2038B009209C9 /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
+		CA13B59118D204EF009209C9 /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
+		CA13B59218D204EF009209C9 /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -474,6 +489,8 @@
 		CA13B55718D0AD1B009209C9 /* GoPartyWebserviceCore */ = {
 			isa = PBXGroup;
 			children = (
+				CA13B58D18D20370009209C9 /* Jastor */,
+				CA13B58318D0B691009209C9 /* Token */,
 				CA13B55A18D0AD6C009209C9 /* Models */,
 				CA13B55918D0AD4F009209C9 /* Connector */,
 				CA13B55818D0AD43009209C9 /* AFNetworking */,
@@ -525,8 +542,32 @@
 				CA13B57E18D0ADD4009209C9 /* EventModel.m */,
 				CA13B57F18D0ADD4009209C9 /* UserModel.h */,
 				CA13B58018D0ADD4009209C9 /* UserModel.m */,
+				CA13B58718D0BDCC009209C9 /* ErrorModel.h */,
+				CA13B58818D0BDCC009209C9 /* ErrorModel.m */,
+				CA13B58A18D0BE94009209C9 /* EventCategory.h */,
+				CA13B58B18D0BE94009209C9 /* EventCategory.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		CA13B58318D0B691009209C9 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				CA13B58418D0B8B1009209C9 /* GlobalTokenManager.h */,
+				CA13B58518D0B8B1009209C9 /* GlobalTokenManager.m */,
+			);
+			name = Token;
+			sourceTree = "<group>";
+		};
+		CA13B58D18D20370009209C9 /* Jastor */ = {
+			isa = PBXGroup;
+			children = (
+				CA13B59118D204EF009209C9 /* JastorRuntimeHelper.h */,
+				CA13B59218D204EF009209C9 /* JastorRuntimeHelper.m */,
+				CA13B58E18D2038B009209C9 /* Jastor.h */,
+				CA13B58F18D2038B009209C9 /* Jastor.m */,
+			);
+			name = Jastor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -670,9 +711,12 @@
 				CA13B58218D0ADD4009209C9 /* UserModel.m in Sources */,
 				AC12F95018C1CC53000FAC58 /* AddFriendsViewController.m in Sources */,
 				CA13B58118D0ADD4009209C9 /* EventModel.m in Sources */,
+				CA13B59018D2038B009209C9 /* Jastor.m in Sources */,
 				CA13B57C18D0ADC5009209C9 /* AFGoPartyApiClient.m in Sources */,
 				AC19F145187C391900E17D98 /* main.m in Sources */,
+				CA13B58918D0BDCC009209C9 /* ErrorModel.m in Sources */,
 				AC48603418BE1FAD00E3CF21 /* MainTabBarController.m in Sources */,
+				CA13B59318D204EF009209C9 /* JastorRuntimeHelper.m in Sources */,
 				CA13B57718D0ADB5009209C9 /* AFURLConnectionOperation.m in Sources */,
 				CA13B57018D0ADB5009209C9 /* AFHTTPClient.m in Sources */,
 				AC19F14F187C391900E17D98 /* goPartyViewController.m in Sources */,
@@ -683,6 +727,7 @@
 				CA13B57518D0ADB5009209C9 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				AC12F95A18C22473000FAC58 /* MapTipView.m in Sources */,
 				CA13B57418D0ADB5009209C9 /* AFJSONUtilities.m in Sources */,
+				CA13B58C18D0BE94009209C9 /* EventCategory.m in Sources */,
 				CA13B57818D0ADB5009209C9 /* AFXMLRequestOperation.m in Sources */,
 				AC19F149187C391900E17D98 /* goPartyAppDelegate.m in Sources */,
 				AC2D70C5187ED3A100A5D5C9 /* ActionViewController.m in Sources */,
@@ -690,6 +735,7 @@
 				AC2D70CB187EE26400A5D5C9 /* UserInfoViewController.m in Sources */,
 				AC48604718BE2D5C00E3CF21 /* MyNaviViewController.m in Sources */,
 				CA13B57318D0ADB5009209C9 /* AFJSONRequestOperation.m in Sources */,
+				CA13B58618D0B8B1009209C9 /* GlobalTokenManager.m in Sources */,
 				AC2D70C8187ED3F000A5D5C9 /* AddressListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

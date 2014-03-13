@@ -8,9 +8,11 @@
 
 #import "AFJSONRequestOperation.h"
 #import "AFGoPartyApiClient.h"
+#import "GlobalTokenManager.h"
+#import "UserModel.h"
 
 
-static NSString * const kAFTwitterAPIBaseURLString = @"http://api.twitter.com/1/";
+static NSString * const kAFTwitterAPIBaseURLString = @"http://goparty.cloudapp.net";
 
 @implementation AFGoPartyApiClient
 
@@ -32,6 +34,10 @@ static NSString * const kAFTwitterAPIBaseURLString = @"http://api.twitter.com/1/
     
     [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
 	[self setDefaultHeader:@"Accept" value:@"application/json"];
+    UserModel *user = [GlobalTokenManager sharedInstance].currentUser;
+    if (user != nil) {
+        [self setDefaultHeader:@"token" value:user.token];
+    }
     
     return self;
 }
