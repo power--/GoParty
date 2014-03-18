@@ -98,6 +98,10 @@
 		CA13B58C18D0BE94009209C9 /* EventCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B58B18D0BE94009209C9 /* EventCategory.m */; };
 		CA13B59018D2038B009209C9 /* Jastor.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B58F18D2038B009209C9 /* Jastor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CA13B59318D204EF009209C9 /* JastorRuntimeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B59218D204EF009209C9 /* JastorRuntimeHelper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		CA13B59718D5EB6E009209C9 /* GoPartyUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B59618D5EB6E009209C9 /* GoPartyUtilities.m */; };
+		CA13B59A18D60628009209C9 /* EventCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B59918D60628009209C9 /* EventCategoryTests.m */; };
+		CA13B59D18D746CB009209C9 /* EventMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B59C18D746CB009209C9 /* EventMessage.m */; };
+		CA13B5A018D74A5E009209C9 /* EventQueryFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B59F18D74A5E009209C9 /* EventQueryFilters.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +241,13 @@
 		CA13B58F18D2038B009209C9 /* Jastor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jastor.m; sourceTree = "<group>"; };
 		CA13B59118D204EF009209C9 /* JastorRuntimeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JastorRuntimeHelper.h; sourceTree = "<group>"; };
 		CA13B59218D204EF009209C9 /* JastorRuntimeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JastorRuntimeHelper.m; sourceTree = "<group>"; };
+		CA13B59518D5EB6E009209C9 /* GoPartyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoPartyUtilities.h; sourceTree = "<group>"; };
+		CA13B59618D5EB6E009209C9 /* GoPartyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoPartyUtilities.m; sourceTree = "<group>"; };
+		CA13B59918D60628009209C9 /* EventCategoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCategoryTests.m; sourceTree = "<group>"; };
+		CA13B59B18D746CB009209C9 /* EventMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventMessage.h; sourceTree = "<group>"; };
+		CA13B59C18D746CB009209C9 /* EventMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventMessage.m; sourceTree = "<group>"; };
+		CA13B59E18D74A5E009209C9 /* EventQueryFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventQueryFilters.h; sourceTree = "<group>"; };
+		CA13B59F18D74A5E009209C9 /* EventQueryFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventQueryFilters.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,6 +386,7 @@
 		AC19F15D187C391900E17D98 /* GoPartyTests */ = {
 			isa = PBXGroup;
 			children = (
+				CA13B59818D605F1009209C9 /* Models */,
 				AC19F163187C391900E17D98 /* GoPartyTests.m */,
 				AC19F15E187C391900E17D98 /* Supporting Files */,
 			);
@@ -489,6 +501,7 @@
 		CA13B55718D0AD1B009209C9 /* GoPartyWebserviceCore */ = {
 			isa = PBXGroup;
 			children = (
+				CA13B59418D5EB29009209C9 /* Utility */,
 				CA13B58D18D20370009209C9 /* Jastor */,
 				CA13B58318D0B691009209C9 /* Token */,
 				CA13B55A18D0AD6C009209C9 /* Models */,
@@ -546,6 +559,10 @@
 				CA13B58818D0BDCC009209C9 /* ErrorModel.m */,
 				CA13B58A18D0BE94009209C9 /* EventCategory.h */,
 				CA13B58B18D0BE94009209C9 /* EventCategory.m */,
+				CA13B59B18D746CB009209C9 /* EventMessage.h */,
+				CA13B59C18D746CB009209C9 /* EventMessage.m */,
+				CA13B59E18D74A5E009209C9 /* EventQueryFilters.h */,
+				CA13B59F18D74A5E009209C9 /* EventQueryFilters.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -568,6 +585,23 @@
 				CA13B58F18D2038B009209C9 /* Jastor.m */,
 			);
 			name = Jastor;
+			sourceTree = "<group>";
+		};
+		CA13B59418D5EB29009209C9 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				CA13B59518D5EB6E009209C9 /* GoPartyUtilities.h */,
+				CA13B59618D5EB6E009209C9 /* GoPartyUtilities.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		CA13B59818D605F1009209C9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA13B59918D60628009209C9 /* EventCategoryTests.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -707,6 +741,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA13B5A018D74A5E009209C9 /* EventQueryFilters.m in Sources */,
+				CA13B59718D5EB6E009209C9 /* GoPartyUtilities.m in Sources */,
 				AC19F174187C3D5600E17D98 /* LoginViewController.m in Sources */,
 				CA13B58218D0ADD4009209C9 /* UserModel.m in Sources */,
 				AC12F95018C1CC53000FAC58 /* AddFriendsViewController.m in Sources */,
@@ -722,6 +758,7 @@
 				AC19F14F187C391900E17D98 /* goPartyViewController.m in Sources */,
 				CA13B57618D0ADB5009209C9 /* AFPropertyListRequestOperation.m in Sources */,
 				CA13B57218D0ADB5009209C9 /* AFImageRequestOperation.m in Sources */,
+				CA13B59D18D746CB009209C9 /* EventMessage.m in Sources */,
 				CA13B57918D0ADB5009209C9 /* UIImageView+AFNetworking.m in Sources */,
 				CA13B57118D0ADB5009209C9 /* AFHTTPRequestOperation.m in Sources */,
 				CA13B57518D0ADB5009209C9 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -744,6 +781,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA13B59A18D60628009209C9 /* EventCategoryTests.m in Sources */,
 				AC19F164187C391900E17D98 /* GoPartyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

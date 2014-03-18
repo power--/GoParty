@@ -14,10 +14,15 @@
 
 @synthesize name, categoryId;
 
+- (NSDictionary *)map{
+    NSMutableDictionary *map = [NSMutableDictionary dictionaryWithDictionary:[super map]];
+    [map setObject:@"id" forKey:@"categoryId"];
+    return [NSDictionary dictionaryWithDictionary:map];
+}
 
 +(void)QueryAllEventCategories:(void(^)(NSArray *categories, ErrorModel *error))block{
-    [[AFGoPartyApiClient sharedClient] getPath:[NSString stringWithFormat:@"%@",@"/cxf/rest/eventcategories"] parameters:[NSDictionary init] success:^(AFHTTPRequestOperation *operation, id JSON) {
-        ErrorModel *err = [[ErrorModel alloc] initWithAttributes:JSON];
+    [[AFGoPartyApiClient sharedClient] getPath:[NSString stringWithFormat:@"%@",@"/cxf/rest/eventcategories"] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
+        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:JSON];
         NSMutableArray *mutableEvents = [NSMutableArray arrayWithCapacity:[JSON count]];
         for (NSDictionary *attributes in JSON) {
             EventCategory *event = [[EventCategory alloc] initWithDictionary:attributes];

@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Jastor.h"
 
 @class ErrorModel;
-@interface UserModel : NSObject
+@interface UserModel : Jastor
 
 @property(readonly) NSInteger userId;
 @property(nonatomic) NSInteger phone;
@@ -27,10 +28,10 @@
 @property(nonatomic, strong) NSString *location;
 
 
-- (id)initWithAttributes:(NSDictionary *)attributes;
 + (void)Login:(NSString *)openId usertoken:(NSString *) tokenId usersession:(NSString *)sessionId usermobile:(NSString *)mobile callbackblock:(void(^)(UserModel *user, ErrorModel *error))block;
 + (void)LogOut:(void(^)(ErrorModel *error))block;
 + (void)RegisterUser:(UserModel *)user callbackblock:(void(^)(UserModel *user, ErrorModel *error))block;
 + (void)FindUser:(NSInteger)userId callbackblock:(void(^)(UserModel *user, ErrorModel *error))block;
++ (void)GetCurrentUserProfile:(void(^)(UserModel *user, ErrorModel *error))block;
 
 @end
