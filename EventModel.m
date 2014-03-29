@@ -10,12 +10,23 @@
 #import "EventModel.h"
 #import "AFGoPartyApiClient.h"
 #import "ErrorModel.h"
+#import "EventCategory.h"
 
 NSString * const EventsResourcesUrl = @"";
 
 @implementation EventModel
 
-@synthesize attendees,status,startime,description,endtime,eventCategory,location,locationShareable,owner,title,visibility,eventId;
+//@synthesize attendees,status,startime,description,endtime,eventCategory,location,locationShareable,owner,title,visibility,eventId;
+
+-(UserModel *)owner{
+    if(!_owner)_owner = [[UserModel alloc] init];
+    return _owner;
+}
+
+-(EventCategory *)eventCategory{
+    if(!_eventCategory)_eventCategory = [[EventCategory alloc] init];
+    return _eventCategory;
+}
 
 + (Class)attendees_class {
     return [UserModel class];

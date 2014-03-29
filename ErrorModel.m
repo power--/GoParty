@@ -10,6 +10,6 @@
 
 @implementation ErrorModel
 
-@synthesize code, data, message, status;
+//@synthesize code, data, message, status;
 
 @end
