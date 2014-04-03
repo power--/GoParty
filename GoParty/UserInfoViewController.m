@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad
 {
+    [self.navigationController setTitle:@"个人信息"];
     [super viewDidLoad];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -57,7 +58,7 @@
             return 3;
             break;
         case 2:
-            return 1;
+            return 2;
             break;
         default:
             return 0;
@@ -78,19 +79,66 @@
 {
     static NSString *CellIdentifier1 = @"UserInfoCell1";
     static NSString *CellIdentifier2 = @"UserInfoCell2";
-    static NSString *CellIdentifier3 = @"UserInfoCell3";
     
     int section = [indexPath section];
     int row = [indexPath row];
     if (section == 0 && row == 0) {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier1 forIndexPath:indexPath];
         return cell;
-    }else if (section == 0 && row == 2){
+    }else {
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier2 forIndexPath:indexPath];
-        return cell;
-    }
-    else{
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier3 forIndexPath:indexPath];
+        [cell.textLabel setFont:[UIFont systemFontOfSize:12]];
+        [cell.detailTextLabel setFont:[UIFont systemFontOfSize:12]];
+        
+        if (section == 0) {
+            switch (row) {
+                case 1:
+                    [cell.textLabel setText:@"昵称"];
+                    [cell.detailTextLabel setText:@"报纸山药"];
+                    break;
+                case 2:
+                    [cell.textLabel setText:@"手机号"];
+                    [cell.detailTextLabel setText:@""];
+                    break;
+                case 3:
+                    [cell.textLabel setText:@"出生日期"];
+                    [cell.detailTextLabel setText:@""];
+                    break;
+                default:
+                    break;
+            }
+        }else if (section == 1) {
+            switch (row) {
+                case 0:
+                    [cell.textLabel setText:@"性别"];
+                    [cell.detailTextLabel setText:@"女"];
+                    break;
+                case 1:
+                    [cell.textLabel setText:@"地区"];
+                    [cell.detailTextLabel setText:@"北京 昌平"];
+                    break;
+                case 2:
+                    [cell.textLabel setText:@"个性签名"];
+                    [cell.detailTextLabel setText:@"2012年的第一场雪。"];
+                    break;
+                default:
+                    break;
+            }
+        }else if (section == 2) {
+            switch (row) {
+                case 0:
+                    [cell.textLabel setText:@"QQ账号"];
+                    [cell.detailTextLabel setText:@""];
+                    break;
+                case 1:
+                    [cell.textLabel setText:@"微信账号"];
+                    [cell.detailTextLabel setText:@""];
+                    break;
+                default:
+                    break;
+            }
+        }
+        
         return cell;
     }
     

@@ -14,3 +14,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define Main_Notification_UserInfo @"UserInfoClickedNotification"
+#define Main_Notification_AddFriends @"AddFriendsClickedNotification"
+#define Main_Notification_ActionCell @"ActionCellClickedNotification"
+#define Main_Notification_AddAction @"AddActionClickedNotification"

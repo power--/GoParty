@@ -67,7 +67,7 @@
                      kOPEN_PERMISSION_MATCH_NICK_TIPS_WEIBO,
                      nil];
     
-    _tencentOauth = [[TencentOAuth alloc] initWithAppId:@"222222" andDelegate:self];
+    //_tencentOauth = [[TencentOAuth alloc] initWithAppId:@"222222" andDelegate:self];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view.

@@ -11,7 +11,7 @@
 @interface ActionViewController : UIViewController
 <UITableViewDelegate, UITableViewDataSource>
 {
-    NSInteger _detailRow;
+    UIButton *_addButton;
 }
 
 @property (nonatomic, retain)IBOutlet UISegmentedControl *SegControl;

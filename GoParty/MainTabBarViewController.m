@@ -26,16 +26,10 @@
 
 - (void)viewDidLoad
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(UserCellClicked:) name:@"UserInfoCellClickedNotification" object:nil];
-//    [self.tabBar setBarTintColor:[UIColor blackColor]];
-//    UITabBarItem *item0 = [[self.tabBar items] objectAtIndex:0];
-//    [item0 setSelectedImage:[[UIImage imageNamed:@"f_01.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    UITabBarItem *item1 = [[self.tabBar items] objectAtIndex:1];
-//    [item1 setSelectedImage:[[UIImage imageNamed:@"f_02.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    UITabBarItem *item2 = [[self.tabBar items] objectAtIndex:2];
-//    [item2 setSelectedImage:[[UIImage imageNamed:@"f_03.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    UITabBarItem *item3 = [[self.tabBar items] objectAtIndex:3];
-//    [item3 setSelectedImage:[[UIImage imageNamed:@"f_04.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(UserCellClicked:) name:Main_Notification_UserInfo object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AddFriendsClicked:) name:Main_Notification_AddFriends object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(ActionCellClicked:) name:Main_Notification_ActionCell object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(AddActionClicked:) name:Main_Notification_AddAction object:nil];
     
     _mainTabBarController = [[MainTabBarController alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height-49, self.view.frame.size.width, 49)];
     [_mainTabBarController.view setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin];
@@ -60,6 +54,24 @@
 {
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     [self performSegueWithIdentifier:@"UserInfoIdentifier" sender:self];
+}
+
+- (void)AddFriendsClicked:(NSNotification *)notification
+{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self performSegueWithIdentifier:@"AddFriendsIdentifier" sender:self];
+}
+
+- (void)ActionCellClicked:(NSNotification *)notification
+{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self performSegueWithIdentifier:@"ActionMainIndentifier" sender:self];
+}
+
+- (void)AddActionClicked:(NSNotification *)notification
+{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self performSegueWithIdentifier:@"AddActionIndentifier" sender:self];
 }
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item

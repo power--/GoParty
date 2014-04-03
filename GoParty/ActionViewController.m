@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad
 {
-    self.title = @"活动";
-    [self.navigationController setTitle:self.title];
+    //self.title = @"活动";
+    [self.navigationController setTitle:@"活动"];
     
     CGRect frme = SegControl.frame;
     [SegControl removeFromSuperview];
@@ -29,42 +29,29 @@
     [SegControl setSegmentedControlStyle:UISegmentedControlStyleBar];
     [SegControl setSelectedSegmentIndex:0];
     [SegControl setTintColor:[UIColor darkGrayColor]];
+    [SegControl addTarget:self action:@selector(segControllerSelected:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:SegControl];
     
-    _detailRow = -1;
+    _addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_addButton setFrame:CGRectMake(20, (44-70/2)/2, 70/2, 70/2)];
+    [_addButton setImage:[UIImage imageNamed:@"l_add.png"] forState:UIControlStateNormal];
+    [_addButton setImage:[UIImage imageNamed:@"l_add_1.png"] forState:UIControlStateHighlighted];
+    [_addButton addTarget:self action:@selector(addButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController.navigationBar addSubview:_addButton];
     
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (UIView *)GetActionDetailsView
+- (IBAction)segControllerSelected:(id)sender
 {
-    UIView *pView = [[UIView alloc] initWithFrame:CGRectMake(10, 55, 300, 167)];
-    pView.tag = 99;
-    [pView setBackgroundColor:[UIColor clearColor]];
-    UIView *subView = [[UIView alloc] initWithFrame:CGRectMake(0, 7, pView.frame.size.width, pView.frame.size.height-7)];
-    [subView setBackgroundColor:[UIColor whiteColor]];
-    subView.layer.masksToBounds = YES;
-    subView.layer.cornerRadius = 6.0;
-    subView.layer.borderWidth = 0.5f;
-    subView.layer.borderColor = [[UIColor darkGrayColor] CGColor];
-    [pView addSubview:subView];
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 300, 60)];
-    [label setBackgroundColor:[UIColor clearColor]];
-    [label setText:@"这种实现看起来不咋样，还是自己画框，或者让UX阿姨把图片重新做下，然后给出线框和背景的RGB值！目前就这样，里面的先不做了。"];
-    [label setFont:[UIFont systemFontOfSize:14]];
-    [label setNumberOfLines:3];
-    [label setTextColor:[UIColor blackColor]];
-    [pView addSubview:label];
-    UIImageView *pointView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 10, 8)];
-    [pointView setImage:[UIImage imageNamed:@"a_point.png"]];
-    [pView addSubview:pointView];
-    return pView;
+    
+}
+
+- (IBAction)addButtonClicked:(id)sender
+{
+    //[self performSegueWithIdentifier:@"AddFriendsIdentifier" sender:self];
+    NSNotification *noti = [NSNotification notificationWithName:Main_Notification_AddAction object:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:noti];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,47 +76,6 @@
 {
     static NSString *CellIdentifier = @"PartyActionCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//        [cell setBackgroundColor:[UIColor clearColor]];
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        
-//        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 5, 50, 50)];
-//        [imageView setImage:[UIImage imageNamed:@"wechat_logo.png"]];
-//        imageView.tag = 1;
-//        [cell.contentView addSubview:imageView];
-//        
-//        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(68, 10, 80, 20)];
-//        [nameLabel setBackgroundColor:[UIColor clearColor]];
-//        [nameLabel setText:@"瑞贝卡"];
-//        [nameLabel setFont:[UIFont systemFontOfSize:14]];
-//        nameLabel.tag = 2;
-//        [cell.contentView addSubview:nameLabel];
-//        
-//        UILabel *numLabel = [[UILabel alloc] initWithFrame:CGRectMake(68, 33, 80, 20)];
-//        [numLabel setBackgroundColor:[UIColor clearColor]];
-//        [numLabel setTextColor:[UIColor lightGrayColor]];
-//        [numLabel setText:@"活动数: 4"];
-//        [numLabel setFont:[UIFont systemFontOfSize:14]];
-//        numLabel.tag = 3;
-//        [cell.contentView addSubview:numLabel];
-//        
-//        UILabel *starLabel = [[UILabel alloc] initWithFrame:CGRectMake(165, 33, 35, 20)];
-//        [starLabel setBackgroundColor:[UIColor clearColor]];
-//        [starLabel setTextColor:[UIColor lightGrayColor]];
-//        [starLabel setText:@"好评:"];
-//        [starLabel setFont:[UIFont systemFontOfSize:14]];
-//        [cell.contentView addSubview:nameLabel];
-//        
-//        for (int i=0; i<5; i++) {
-//            UIImageView *star = [[UIImageView alloc] initWithFrame:CGRectMake(205+i*20, 33, 20, 20)];
-//            [star setImage:[UIImage imageNamed:@"a_star.png"]];
-//            [star setHighlightedImage:[UIImage imageNamed:@"a_star_1.png"]];
-//            star.tag = 10 + i + 1;
-//            [cell.contentView addSubview:star];
-//        }
-//    }
     
     // Configure the cell...
     for (UIImageView *pView in [cell.contentView subviews]) {
@@ -138,42 +84,18 @@
         }
     }
     
-    if (_detailRow == [indexPath row]) {
-        [cell.contentView addSubview:[self GetActionDetailsView]];
-    }
-    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_detailRow == [indexPath row]) {
-        return 230.0f;
-    }
-    
     return 60.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_detailRow != -1)
-    {
-        UITableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:_detailRow inSection:0]];
-        for (UIView *pView in [cell.contentView subviews]) {
-            if (pView.tag == 99) {
-                [pView removeFromSuperview];
-            }
-        }
-    }
-    
-    if (_detailRow == [indexPath row]) {
-        _detailRow = -1;
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }
-    else{
-        _detailRow = [indexPath row];
-        [tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }
+    NSNotification *noti = [NSNotification notificationWithName:Main_Notification_ActionCell object:indexPath];
+    [[NSNotificationCenter defaultCenter] postNotification:noti];
 }
 
 /*

@@ -25,8 +25,8 @@
 
 - (void)viewDidLoad
 {
-    self.title = @"联系人";
-    [self.navigationController setTitle:self.title];
+    //self.title = @"联系人";
+    [self.navigationController setTitle:@"联系人"];
     [super viewDidLoad];
     
     _addButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -34,7 +34,7 @@
     [_addButton setImage:[UIImage imageNamed:@"l_add.png"] forState:UIControlStateNormal];
     [_addButton setImage:[UIImage imageNamed:@"l_add_1.png"] forState:UIControlStateHighlighted];
     [_addButton addTarget:self action:@selector(addButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
+    [self.navigationController.navigationBar addSubview:_addButton];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -49,21 +49,23 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [UIView beginAnimations:Nil context:nil];
-    [self.navigationController.navigationBar addSubview:_addButton];
-    [UIView commitAnimations];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [_addButton removeFromSuperview];
-}
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    [UIView beginAnimations:Nil context:nil];
+//    [self.navigationController.navigationBar addSubview:_addButton];
+//    [UIView commitAnimations];
+//}
+//
+//- (void)viewDidDisappear:(BOOL)animated
+//{
+//    [_addButton removeFromSuperview];
+//}
 
 - (IBAction)addButtonClicked:(id)sender
 {
-    [self performSegueWithIdentifier:@"AddFriendsIdentifier" sender:self];
+    //[self performSegueWithIdentifier:@"AddFriendsIdentifier" sender:self];
+    NSNotification *noti = [NSNotification notificationWithName:Main_Notification_AddFriends object:nil];
+    [[NSNotificationCenter defaultCenter] postNotification:noti];
 }
 
 #pragma mark - Table view data source
@@ -85,7 +87,7 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return @"";
+        return @" ";
     }else{
         return @"好友";
     }
@@ -163,7 +165,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([indexPath section] == 1) {
-        NSNotification *noti = [NSNotification notificationWithName:@"UserInfoCellClickedNotification" object:indexPath];
+        NSNotification *noti = [NSNotification notificationWithName:Main_Notification_UserInfo object:indexPath];
         [[NSNotificationCenter defaultCenter] postNotification:noti];
     }
 }

@@ -25,8 +25,8 @@
 
 - (void)viewDidLoad
 {
-    self.title = @"加朋友";
-    [self.navigationController setTitle:self.title];
+    //self.title = @"加朋友";
+    [self.navigationController setTitle:@"加朋友"];
     [super viewDidLoad];
 }
 
