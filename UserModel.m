@@ -13,7 +13,7 @@
 
 @implementation UserModel
 
-@synthesize userId,signature,token,nikeName,birthdate,qq,phone,password,photo,gender,location,loginId,weChat,weibo;
+//@synthesize userId,signature,token,nikeName,birthdate,qq,phone,password,photo,gender,location,loginId,weChat,weibo;
 
 //- (id)initWithAttributes:(NSDictionary *)attributes{
 //

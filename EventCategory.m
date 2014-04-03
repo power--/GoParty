@@ -12,7 +12,7 @@
 
 @implementation EventCategory
 
-@synthesize name, categoryId;
+//@synthesize name, categoryId;
 
 - (NSDictionary *)map{
     NSMutableDictionary *map = [NSMutableDictionary dictionaryWithDictionary:[super map]];

@@ -16,13 +16,13 @@ static NSString *parameterSeperator = @"|";
 
 @implementation EventQueryFilters
 
-@synthesize offset,searchKeys,sponsors,after,before,categories,limits;
+//@synthesize offset,searchKeys,sponsors,after,before,categories,limits;
 
 -(NSDictionary *)GetQueryString{
-    NSDictionary *queryStrs = [NSDictionary dictionaryWithObjectsAndKeys:@"offset",offset,@"limits",limits,@"before",before,@"after",after, nil];
-    NSString *searchKeyStrs = [self GetQueryStringFromArray:searchKeys];
-    NSString *sponsorsStrs = [self GetQueryStringFromArray:sponsors];
-    NSString *categoriesStrs = [self GetQueryStringFromArray:categories];
+    NSDictionary *queryStrs = [NSDictionary dictionaryWithObjectsAndKeys:@"offset",self.offset,@"limits",self.limits,@"before",self.before,@"after",self.after, nil];
+    NSString *searchKeyStrs = [self GetQueryStringFromArray:self.searchKeys];
+    NSString *sponsorsStrs = [self GetQueryStringFromArray:self.sponsors];
+    NSString *categoriesStrs = [self GetQueryStringFromArray:self.categories];
     [queryStrs setValue:searchKeyStrs forKey:@"search"];
     [queryStrs setValue:sponsorsStrs forKey:@"sponsors"];
     [queryStrs setValue:categoriesStrs forKey:@"categories"];

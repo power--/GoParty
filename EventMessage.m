@@ -12,7 +12,7 @@
 
 @implementation EventMessage
 
-@synthesize userId,eventId,content,messageId,publishTime,type;
+//@synthesize userId,eventId,content,messageId,publishTime,type;
 
 +(void) PostMessage:(NSInteger)eventId message:(NSString *)content callBackBlock:(void(^)(EventMessage *msg,ErrorModel *err))block{
     [[AFGoPartyApiClient sharedClient] postPath:[NSString stringWithFormat:@"/events/%dl/messages",eventId] parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"content",content, nil] success:^(AFHTTPRequestOperation *operation, id JSON) {

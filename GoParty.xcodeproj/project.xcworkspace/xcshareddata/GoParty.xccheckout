@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C53AB1D0-D57B-4EB9-AF51-F6A0A31D38FD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GoParty</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9BECD957-7834-4D1B-8F2E-84AA42F9453B</key>
+		<string>https://github.com/power--/GoParty.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GoParty.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9BECD957-7834-4D1B-8F2E-84AA42F9453B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/power--/GoParty.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9BECD957-7834-4D1B-8F2E-84AA42F9453B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9BECD957-7834-4D1B-8F2E-84AA42F9453B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GoParty</string>
+		</dict>
+	</array>
+</dict>
+</plist>
