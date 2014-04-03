@@ -16,8 +16,6 @@ NSString * const EventsResourcesUrl = @"";
 
 @implementation EventModel
 
-//@synthesize attendees,status,startime,description,endtime,eventCategory,location,locationShareable,owner,title,visibility,eventId;
-
 -(UserModel *)owner{
     if(!_owner)_owner = [[UserModel alloc] init];
     return _owner;
