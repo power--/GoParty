@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface EventQueryFilters : NSObject
+@property(nonatomic,strong) NSString *scope;
 @property(nonatomic,strong) NSString *after;
 @property(nonatomic,strong) NSString *before;
 @property(nonatomic,strong) NSArray *sponsors;

@@ -66,6 +66,17 @@
     return YES;
 }
 
+- (void)applicationDidFinishLaunching:(UIApplication *)application
+{
+    NSSetUncaughtExceptionHandler(&myExceptionHandler);
+}
+
+void myExceptionHandler(NSException *exception)
+{
+    NSArray *stack = [exception callStackReturnAddresses];
+    NSLog(@"Stack trace: %@", stack);
+}
+
 -(void) onReq:(BaseReq*)req
 {
     

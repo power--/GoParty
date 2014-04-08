@@ -9,10 +9,16 @@
 #import <Foundation/Foundation.h>
 @class UserModel;
 
+extern NSString * const userModelNotification;
+
 @interface GlobalTokenManager : NSObject
 
 +(GlobalTokenManager *)sharedInstance;
 
-@property(nonatomic, copy) UserModel *currentUser;
+-(void) setUpCurrentUserData:(UserModel *)user;
+
+@property(nonatomic, strong, setter = setUser:) UserModel *currentUser;
+
+-(void) setUser: (UserModel *)user;
 
 @end

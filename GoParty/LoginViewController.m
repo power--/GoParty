@@ -7,6 +7,10 @@
 //
 
 #import "LoginViewController.h"
+#import "../UserModel.h"
+#import "../ErrorModel.h"
+#import "../GlobalTokenManager.h"
+#import "MBProgressHUD.h"
 
 @interface LoginViewController ()
 
@@ -88,8 +92,34 @@
 
 - (IBAction)loginButtonClicked:(id)sender
 {
-    UIStoryboard *secondStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.view.window.rootViewController=[secondStoryboard instantiateInitialViewController];
+    if (phoneButton.selected) {
+        NSString *phone = mTextField1.text;
+        MBProgressHUD *progressBar = [[MBProgressHUD alloc] initWithView:self.view];
+        [self.view addSubview:progressBar];
+        progressBar.labelText = @"登陆中...";
+        progressBar.dimBackground = YES;
+        progressBar.square = YES;
+        [progressBar show:true];
+        
+        [UserModel Login:@"" usertoken:@"" usersession:@"" usermobile:phone callbackblock:^(UserModel *user, ErrorModel *error) {
+            [progressBar hide:true];
+            
+            if (error) {
+                
+                [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:error.data delegate:nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
+            }
+            else{
+                [GlobalTokenManager sharedInstance].currentUser = user;
+                UIStoryboard *secondStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                self.view.window.rootViewController=[secondStoryboard instantiateInitialViewController];
+            }
+        }];
+    }else
+    {
+        UIStoryboard *secondStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.view.window.rootViewController=[secondStoryboard instantiateInitialViewController];
+    }
+    
     //[self presentViewController:[secondStoryboard instantiateInitialViewController] animated:YES completion:nil];
 }
 - (IBAction)loginTypeButtonClicked:(id)sender

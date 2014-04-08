@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "GoParty/MBProgressHUD.h"
 
 @interface GoPartyUtilities : NSObject
 
 +(NSDictionary *)GetDicFromNormalClass:(id) classInstance;
++(MBProgressHUD *)GenerateProgressHud:(NSString *)title subtitle:(NSString *)hudSubtitle view:(UIView *)parentView;
+
 
 @end

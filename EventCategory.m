@@ -21,8 +21,7 @@
 }
 
 +(void)QueryAllEventCategories:(void(^)(NSArray *categories, ErrorModel *error))block{
-    [[AFGoPartyApiClient sharedClient] getPath:[NSString stringWithFormat:@"%@",@"/cxf/rest/eventcategories"] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
-        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:JSON];
+    [[AFGoPartyApiClient sharedClient] getPathExt:[NSString stringWithFormat:@"%@",@"eventcategories"] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
         NSMutableArray *mutableEvents = [NSMutableArray arrayWithCapacity:[JSON count]];
         for (NSDictionary *attributes in JSON) {
             EventCategory *event = [[EventCategory alloc] initWithDictionary:attributes];
@@ -30,13 +29,12 @@
         }
         
         if (block) {
-            block([NSArray arrayWithArray:mutableEvents], err);
+            block([NSArray arrayWithArray:mutableEvents], nil);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, ErrorModel *error) {
         if (block) {
-            ErrorModel *err = [[ErrorModel alloc] init];
-            err.data = [error localizedDescription];
-            block([NSArray array], err);
+            
+            block(nil, error);
         }
     }];
 }

@@ -11,7 +11,7 @@
 
 @interface ErrorModel : Jastor
 
-@property(nonatomic,strong) NSString *code;
+@property(nonatomic) NSInteger code;
 @property(nonatomic,strong) NSString *data;
 @property(nonatomic,strong) NSString *message;
 @property(nonatomic,strong) NSString *status;

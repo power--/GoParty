@@ -1,16 +1,16 @@
 //
-//  UserModel.h
+//  UserFriendModel.h
 //  GoParty
 //
-//  Created by JoeTang on 14-3-1.
+//  Created by JoeTang on 14-4-8.
 //  Copyright (c) 2014年 goParty. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "UserModel.h"
 #import "Jastor.h"
 
-@class ErrorModel;
-@interface UserModel : Jastor
+@interface UserFriendModel : Jastor
 
 @property(nonatomic,strong) NSString *userId;
 @property(nonatomic) NSInteger phone;
@@ -26,12 +26,14 @@
 @property(nonatomic, strong) NSString *gender;
 @property(nonatomic, strong) NSString *token;
 @property(nonatomic, strong) NSString *location;
+@property(nonatomic,strong) NSString *remarkName;
+@property(nonatomic,strong) NSArray *groups;
 
++(void) addFriend:(NSString *)userId message:(NSString *)applyMessage callback:(void(^)(UserFriendModel *friend, ErrorModel *error))block;
++(void) getFriendsList:(void(^)(NSArray *friends))block;
 
-+ (void)Login:(NSString *)openId usertoken:(NSString *) tokenId usersession:(NSString *)sessionId usermobile:(NSString *)mobile callbackblock:(void(^)(UserModel *user, ErrorModel *error))block;
-+ (void)LogOut:(void(^)(ErrorModel *error))block;
-+ (void)RegisterUser:(UserModel *)user callbackblock:(void(^)(UserModel *user, ErrorModel *error))block;
-+ (void)FindUser:(NSString *)userId callbackblock:(void(^)(UserModel *user, ErrorModel *error))block;
-+ (void)GetCurrentUserProfile:(void(^)(UserModel *user, ErrorModel *error))block;
++(void) updateFriendInfo;
+
++(void) deleteFriend;
 
 @end

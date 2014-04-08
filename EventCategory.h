@@ -13,7 +13,8 @@
 @interface EventCategory : Jastor
 
 @property(nonatomic,strong) NSString *name;
-@property(nonatomic) NSInteger categoryId;
+@property(nonatomic,strong) NSString *categoryId;
+@property(nonatomic,strong) NSString *logo;
 
 +(void)QueryAllEventCategories:(void(^)(NSArray *categories, ErrorModel *error))block;
 

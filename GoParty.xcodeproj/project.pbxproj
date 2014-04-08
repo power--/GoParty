@@ -124,6 +124,9 @@
 		CA13B59A18D60628009209C9 /* EventCategoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B59918D60628009209C9 /* EventCategoryTests.m */; };
 		CA13B59D18D746CB009209C9 /* EventMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B59C18D746CB009209C9 /* EventMessage.m */; };
 		CA13B5A018D74A5E009209C9 /* EventQueryFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = CA13B59F18D74A5E009209C9 /* EventQueryFilters.m */; };
+		CA43312E18F452E30073DD35 /* UserFriendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA43312D18F452E30073DD35 /* UserFriendModel.m */; };
+		CA43313118F457180073DD35 /* UserFriendGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA43313018F457180073DD35 /* UserFriendGroupModel.m */; };
+		CA5516D418F2807E00CB43EC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5516D318F2807E00CB43EC /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -298,6 +301,12 @@
 		CA13B59C18D746CB009209C9 /* EventMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventMessage.m; sourceTree = "<group>"; };
 		CA13B59E18D74A5E009209C9 /* EventQueryFilters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventQueryFilters.h; sourceTree = "<group>"; };
 		CA13B59F18D74A5E009209C9 /* EventQueryFilters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventQueryFilters.m; sourceTree = "<group>"; };
+		CA43312C18F452E30073DD35 /* UserFriendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFriendModel.h; sourceTree = "<group>"; };
+		CA43312D18F452E30073DD35 /* UserFriendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFriendModel.m; sourceTree = "<group>"; };
+		CA43312F18F457180073DD35 /* UserFriendGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFriendGroupModel.h; sourceTree = "<group>"; };
+		CA43313018F457180073DD35 /* UserFriendGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFriendGroupModel.m; sourceTree = "<group>"; };
+		CA5516D218F2807E00CB43EC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		CA5516D318F2807E00CB43EC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,6 +398,7 @@
 		AC19F13E187C391900E17D98 /* GoParty */ = {
 			isa = PBXGroup;
 			children = (
+				CA5516D118F2803D00CB43EC /* MBProgressHud */,
 				CA13B54E18D0AC93009209C9 /* WeChatSDK_1.4.2.1 */,
 				AC19F147187C391900E17D98 /* goPartyAppDelegate.h */,
 				AC19F148187C391900E17D98 /* goPartyAppDelegate.m */,
@@ -649,6 +659,10 @@
 				CA13B59C18D746CB009209C9 /* EventMessage.m */,
 				CA13B59E18D74A5E009209C9 /* EventQueryFilters.h */,
 				CA13B59F18D74A5E009209C9 /* EventQueryFilters.m */,
+				CA43312C18F452E30073DD35 /* UserFriendModel.h */,
+				CA43312D18F452E30073DD35 /* UserFriendModel.m */,
+				CA43312F18F457180073DD35 /* UserFriendGroupModel.h */,
+				CA43313018F457180073DD35 /* UserFriendGroupModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -688,6 +702,15 @@
 				CA13B59918D60628009209C9 /* EventCategoryTests.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		CA5516D118F2803D00CB43EC /* MBProgressHud */ = {
+			isa = PBXGroup;
+			children = (
+				CA5516D218F2807E00CB43EC /* MBProgressHUD.h */,
+				CA5516D318F2807E00CB43EC /* MBProgressHUD.m */,
+			);
+			name = MBProgressHud;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -850,12 +873,14 @@
 				AC19F174187C3D5600E17D98 /* LoginViewController.m in Sources */,
 				CA13B58218D0ADD4009209C9 /* UserModel.m in Sources */,
 				AC12F95018C1CC53000FAC58 /* AddFriendsViewController.m in Sources */,
+				CA5516D418F2807E00CB43EC /* MBProgressHUD.m in Sources */,
 				CA13B58118D0ADD4009209C9 /* EventModel.m in Sources */,
 				CA13B59018D2038B009209C9 /* Jastor.m in Sources */,
 				CA13B57C18D0ADC5009209C9 /* AFGoPartyApiClient.m in Sources */,
 				AC19F145187C391900E17D98 /* main.m in Sources */,
 				ACE501C218E9407300DC395D /* AddActionViewController.m in Sources */,
 				CA13B58918D0BDCC009209C9 /* ErrorModel.m in Sources */,
+				CA43312E18F452E30073DD35 /* UserFriendModel.m in Sources */,
 				ACF5851D18EA89EC000CC50C /* ATiChooseViewController.m in Sources */,
 				AC06EEA918E99ACC00D5281C /* ActionTypeViewController.m in Sources */,
 				AC48603418BE1FAD00E3CF21 /* MainTabBarController.m in Sources */,
@@ -881,6 +906,7 @@
 				CA13B57318D0ADB5009209C9 /* AFJSONRequestOperation.m in Sources */,
 				AC06EEAC18E99AE400D5281C /* ActionTimeViewController.m in Sources */,
 				CA13B58618D0B8B1009209C9 /* GlobalTokenManager.m in Sources */,
+				CA43313118F457180073DD35 /* UserFriendGroupModel.m in Sources */,
 				AC2D70C8187ED3F000A5D5C9 /* AddressListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

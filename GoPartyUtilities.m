@@ -51,5 +51,15 @@
     
 }
 
++(MBProgressHUD *)GenerateProgressHud:(NSString *)title subtitle:(NSString *)hudSubtitle view:(UIView *)parentView{
+    MBProgressHUD *progressBar = [[MBProgressHUD alloc] initWithView:parentView];
+    [parentView addSubview:progressBar];
+    progressBar.labelText = title;
+    progressBar.dimBackground = YES;
+    progressBar.square = YES;
+    [progressBar show:true];
+    return progressBar;
+}
+
 
 @end

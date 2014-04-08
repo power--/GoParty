@@ -10,6 +10,7 @@
 #import "AFGoPartyApiClient.h"
 #import "ErrorModel.h"
 #import "GoPartyUtilities.h"
+#import "AFHTTPRequestOperation.h"
 
 @implementation UserModel
 
@@ -65,83 +66,69 @@
 }
 
 + (void)Login:(NSString *)openId usertoken:(NSString *) tokenId usersession:(NSString *)sessionId usermobile:(NSString *)mobile callbackblock:(void(^)(UserModel *user, ErrorModel *error))block{
-    [[AFGoPartyApiClient sharedClient] postPath:[NSString stringWithFormat:@"%@",@"/login"] parameters:[NSDictionary dictionaryWithObjectsAndKeys:@"openId",openId,@"tokenId",tokenId,@"sessionId",sessionId,@"mobile",mobile, nil] success:^(AFHTTPRequestOperation *operation, id JSON) {
-        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:JSON];
+    [[AFGoPartyApiClient sharedClient] postPathExt:[NSString stringWithFormat:@"%@",@"login"] parameters:[NSDictionary dictionaryWithObjectsAndKeys:openId,@"openId",tokenId,@"tokenId",sessionId,@"sessionId",mobile,@"mobile", nil] success:^(AFHTTPRequestOperation *operation, id JSON) {
         UserModel *user = [[UserModel alloc] initWithDictionary:JSON];
-        
+        user.token = [operation.response.allHeaderFields objectForKey:@"token"];
         if (block) {
-            block(user, err);
+            
+            block(user, nil);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, ErrorModel *error) {
         if (block) {
-            ErrorModel *err = [[ErrorModel alloc] init];
-            err.data = [error localizedDescription];
-            block(nil, err);
+            block(nil, error);
         }
     }];
 }
 + (void)LogOut:(void(^)(ErrorModel *error))block{
-    [[AFGoPartyApiClient sharedClient] getPath:[NSString stringWithFormat:@"%@",@"/logout"] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
-        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:JSON];
+    [[AFGoPartyApiClient sharedClient] putPathExt:[NSString stringWithFormat:@"%@",@"logout"] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
         
         if (block) {
-            block(err);
+            block(nil);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, ErrorModel *error) {
         if (block) {
-            ErrorModel *err = [[ErrorModel alloc] init];
-            err.data = [error localizedDescription];
-            block(err);
+            block(error);
         }
     }];
 }
 + (void)RegisterUser:(UserModel *)user callbackblock:(void(^)(UserModel *user, ErrorModel *error))block{
     NSDictionary *userPoroerties = [GoPartyUtilities GetDicFromNormalClass:user];
-    [[AFGoPartyApiClient sharedClient] putPath:[NSString stringWithFormat:@"%@",@"/profile"] parameters:userPoroerties success:^(AFHTTPRequestOperation *operation, id JSON) {
-        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:JSON];
+    [[AFGoPartyApiClient sharedClient] putPathExt:[NSString stringWithFormat:@"%@",@"profile"] parameters:userPoroerties success:^(AFHTTPRequestOperation *operation, id JSON) {
         UserModel *user = [[UserModel alloc] initWithDictionary:JSON];
         
         if (block) {
-            block(user, err);
+            block(user, nil);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, ErrorModel *error) {
         if (block) {
-            ErrorModel *err = [[ErrorModel alloc] init];
-            err.data = [error localizedDescription];
-            block(nil, err);
+            block(nil, error);
         }
     }];
 }
-+ (void)FindUser:(NSInteger)userId callbackblock:(void(^)(UserModel *user, ErrorModel *error))block{
-    [[AFGoPartyApiClient sharedClient] getPath:[NSString stringWithFormat:@"%@%dl",@" /users/",userId] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
-        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:JSON];
++ (void)FindUser:(NSString *)userId callbackblock:(void(^)(UserModel *user, ErrorModel *error))block{
+    [[AFGoPartyApiClient sharedClient] getPathExt:[NSString stringWithFormat:@"%@%@",@"users/",userId] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
         UserModel *user = [[UserModel alloc] initWithDictionary:JSON];
         
         if (block) {
-            block(user, err);
+            block(user, nil);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, ErrorModel *error) {
         if (block) {
-            ErrorModel *err = [[ErrorModel alloc] init];
-            err.data = [error localizedDescription];
-            block(nil, err);
+            block(nil, error);
         }
     }];
 }
 
 +(void)GetCurrentUserProfile:(void(^)(UserModel *user, ErrorModel *error))block{
-    [[AFGoPartyApiClient sharedClient] getPath:[NSString stringWithFormat:@"%@",@" /profile"] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
-        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:JSON];
+    [[AFGoPartyApiClient sharedClient] getPathExt:[NSString stringWithFormat:@"%@",@"profile"] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
         UserModel *user = [[UserModel alloc] initWithDictionary:JSON];
         
         if (block) {
-            block(user, err);
+            block(user, nil);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(AFHTTPRequestOperation *operation, ErrorModel *error) {
         if (block) {
-            ErrorModel *err = [[ErrorModel alloc] init];
-            err.data = [error localizedDescription];
-            block(nil, err);
+            block(nil, error);
         }
     }];
 }
