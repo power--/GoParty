@@ -7,12 +7,20 @@
 //
 
 #import "ActionTypeViewController.h"
+#import "../EventCategory.h"
+#import "MBProgressHUD.h"
+#import "../ErrorModel.h"
 
 @interface ActionTypeViewController ()
-
+@property(nonatomic,strong) NSArray *caregoriesList;
 @end
 
 @implementation ActionTypeViewController
+
+-(NSArray *)caregoriesList{
+    if(!_caregoriesList)_caregoriesList = [[NSArray alloc] init];
+    return _caregoriesList;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,6 +36,20 @@
     [self.navigationController setTitle:@"类型"];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    MBProgressHUD *progressBar = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:progressBar];
+    progressBar.labelText = @"加载中...";
+    progressBar.dimBackground = YES;
+    progressBar.square = YES;
+    [progressBar show:true];
+    [EventCategory QueryAllEventCategories:^(NSArray *categories, ErrorModel *error) {
+        [progressBar hide:true];
+        if (error) {
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:error.data delegate:nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
+        }else{
+            self.caregoriesList = categories;
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,7 +77,7 @@
 #pragma mark --
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 8;
+    return [self.caregoriesList count];
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -63,7 +85,12 @@
 {
     static NSString *indetifier = @"ActionTypeCell";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:indetifier forIndexPath:indexPath];
+    EventCategory *category = (EventCategory *)[self.caregoriesList objectAtIndex:indexPath.section *1 + indexPath.row];
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
+    imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:category.logo]]];
     
+    UILabel *label = (UILabel *)[cell viewWithTag:2];
+    label.text = category.name;
     return cell;
 }
 

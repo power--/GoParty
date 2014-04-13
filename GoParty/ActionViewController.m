@@ -9,13 +9,33 @@
 #import "ActionViewController.h"
 #import "MapTipView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "../EventModel.h"
+#import "../ErrorModel.h"
+#import "../EventQueryFilters.h"
+#import "MBProgressHUD.h"
+#import "GoPartyUtilities.h"
 
 @interface ActionViewController ()
-
+@property(nonatomic,strong) NSArray *actionList;
+@property(nonatomic,strong) EventQueryFilters *filters;
 @end
 
 @implementation ActionViewController
 @synthesize SegControl;
+
+-(NSArray *)actionList{
+    if(!_actionList)_actionList = [[NSArray alloc] init];
+    return _actionList;
+}
+
+-(EventQueryFilters *)filters{
+    if (!_filters) {
+        _filters = [[EventQueryFilters alloc]
+                    init];
+    }
+    
+    return _filters;
+}
 
 - (void)viewDidLoad
 {
@@ -40,6 +60,22 @@
     [self.navigationController.navigationBar addSubview:_addButton];
     
     [super viewDidLoad];
+    self.filters.scope = @"self";
+    MBProgressHUD *progressBar = [GoPartyUtilities GenerateProgressHud:@"加载中..." subtitle:@"" view:self.view];
+    
+    [EventModel QueryCurrentUserEvents:self.filters callBackBlock:^(NSArray *events, ErrorModel *error) {
+        [progressBar hide:true];
+        if (error) {
+            
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:@"加载错误。" delegate:nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
+        }
+        else
+        {
+            self.actionList = events;
+        }
+        
+        
+    }];
 }
 
 - (IBAction)segControllerSelected:(id)sender
@@ -69,7 +105,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [self.actionList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
