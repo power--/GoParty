@@ -1,24 +1,19 @@
 //
-//  AddActionViewController.m
+//  ActionMainDetailViewController.m
 //  GoParty
 //
-//  Created by maszmacadmin on 14-3-31.
+//  Created by maszmacadmin on 14-4-10.
 //  Copyright (c) 2014年 goParty. All rights reserved.
 //
 
-#import "AddActionViewController.h"
-#import "../GoPartyUtilities.h"
-#import "../EventModel.h"
-#import "../EventCategory.h"
-#import "../GlobalTokenManager.h"
+#import "ActionMainDetailViewController.h"
 
-@interface AddActionViewController ()
+
+@interface ActionMainDetailViewController ()
 
 @end
 
-@implementation AddActionViewController
-@synthesize ChooseScrollView;
-@synthesize TableView;
+@implementation ActionMainDetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +26,6 @@
 
 - (void)viewDidLoad
 {
-    [self.navigationController setTitle:@"添加"];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -42,51 +36,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)ChooseButtonClicked:(id)sender
-{
-    EventModel *event = [[EventModel alloc] init];
-    EventCategory *category = [[EventCategory alloc] init];
-    category.categoryId = @"1";
-    [event.categories addObject:category];
-    event.title = @"goparty supper";
-    event.location = @"shenzhen";
-    event.description = @"test api";
-    [event.members addObject:[GlobalTokenManager sharedInstance].currentUser];
-    event.owner = [GlobalTokenManager sharedInstance].currentUser;
-    event.status = @"INIT";
-    event.visibility = @"V_PUBLIC";
-    event.starTime = @"2014-03-03T07:02:19.266Z";
-    event.endTime = @"2014-03-03T07:02:19.266Z";
-    event.locationShareable = false;
-    
-    MBProgressHUD *progressBar = [GoPartyUtilities GenerateProgressHud:@"生成中..." subtitle:@"" view:self.view];
-    
-    [EventModel CreateEvent:event callBackBlock:^(EventModel *eve, ErrorModel *err) {
-        [progressBar hide:true];
-        if (err) {
-            
-            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:@"加载错误。" delegate:nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
-        }
-        else
-        {
-            [self.navigationController popViewControllerAnimated:YES];
-        }
-        
-        
-    }];
-
-}
-
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark - Table view data source
 
@@ -103,10 +62,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     int row = [indexPath row];
-    NSString *CellIdentifier = [NSString stringWithFormat:@"addActionCell%d", row + 1];
+    NSString *CellIdentifier = [NSString stringWithFormat:@"DetailActionCell%d", row + 1];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if (row == 2 || row == 5) {
-        CGRect frame = CGRectMake(20, 5, 280, row == 2 ? 60 : 110);
+        NSString *str = @"东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！";
+        UIFont *font = [UIFont systemFontOfSize:12];
+        CGSize contentSize = [str sizeWithFont:font constrainedToSize:CGSizeMake(270.0f, 20000.0f) lineBreakMode:NSLineBreakByWordWrapping];
+        CGRect frame = CGRectMake(20, 5, 280, row == 2 ? 60 : contentSize.height + 10 + 30);
         UITextField *textField = [[UITextField alloc] initWithFrame:frame];
         [textField setBorderStyle:UITextBorderStyleRoundedRect];
         [textField setFont:[UIFont systemFontOfSize:12]];
@@ -128,7 +90,10 @@
         return 70;
     }
     else if (row == 5){
-        return 120;
+        NSString *str = @"东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！";
+        UIFont *font = [UIFont systemFontOfSize:12];
+        CGSize contentSize = [str sizeWithFont:font constrainedToSize:CGSizeMake(270.0f, 20000.0f) lineBreakMode:NSLineBreakByWordWrapping];
+        return contentSize.height + 10 + 30 + 10;
     }
     
     return 44;
@@ -136,8 +101,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSNotification *noti = [NSNotification notificationWithName:Main_Notification_ActionCell object:indexPath];
-//    [[NSNotificationCenter defaultCenter] postNotification:noti];
+    //    NSNotification *noti = [NSNotification notificationWithName:Main_Notification_ActionCell object:indexPath];
+    //    [[NSNotificationCenter defaultCenter] postNotification:noti];
     int row = [indexPath row];
     switch (row) {
         case 1:
@@ -212,7 +177,7 @@
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
     [UIView beginAnimations:nil context:nil];
-    [TableView setFrame:CGRectMake(TableView.frame.origin.x, TableView.frame.origin.y-120, TableView.frame.size.width, TableView.frame.size.height)];
+    [textView setFrame:CGRectMake(textView.frame.origin.x, textView.frame.origin.y-120, textView.frame.size.width, textView.frame.size.height)];
     [UIView commitAnimations];
     return YES;
 }
@@ -220,7 +185,7 @@
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView
 {
     [UIView beginAnimations:nil context:nil];
-    [TableView setFrame:CGRectMake(TableView.frame.origin.x, TableView.frame.origin.y+120, TableView.frame.size.width, TableView.frame.size.height)];
+    [textView setFrame:CGRectMake(textView.frame.origin.x, textView.frame.origin.y+120, textView.frame.size.width, textView.frame.size.height)];
     [UIView commitAnimations];
     return YES;
 }

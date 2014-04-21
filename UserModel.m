@@ -11,6 +11,7 @@
 #import "ErrorModel.h"
 #import "GoPartyUtilities.h"
 #import "AFHTTPRequestOperation.h"
+#import "GlobalTokenManager.h"
 
 @implementation UserModel
 
@@ -69,6 +70,7 @@
     [[AFGoPartyApiClient sharedClient] postPathExt:[NSString stringWithFormat:@"%@",@"login"] parameters:[NSDictionary dictionaryWithObjectsAndKeys:openId,@"openId",tokenId,@"tokenId",sessionId,@"sessionId",mobile,@"mobile", nil] success:^(AFHTTPRequestOperation *operation, id JSON) {
         UserModel *user = [[UserModel alloc] initWithDictionary:JSON];
         user.token = [operation.response.allHeaderFields objectForKey:@"token"];
+        [GlobalTokenManager sharedInstance].currentUser = user;
         if (block) {
             
             block(user, nil);

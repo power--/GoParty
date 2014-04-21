@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class ActionMainDetailViewController;
+@class ActionMainShareViewController;
+@class ActionMainChatViewController;
+
 @interface ActionMainViewController : UIViewController
+{
+    ActionMainDetailViewController *_detailController;
+    ActionMainShareViewController *_shareController;
+    ActionMainChatViewController *_chatController;
+}
 
 @property (nonatomic, retain)IBOutlet UISegmentedControl *SegControl;
+@property (nonatomic, retain)IBOutlet UIScrollView *ScrollView;
+
 
 @end

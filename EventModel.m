@@ -21,13 +21,25 @@ NSString * const EventsResourcesUrl = @"";
     return _owner;
 }
 
--(EventCategory *)eventCategory{
-    if(!_eventCategory)_eventCategory = [[EventCategory alloc] init];
-    return _eventCategory;
+-(NSMutableArray *)attendees{
+    if (!_members) {
+        _members = [[NSMutableArray alloc] init];
+    }
+    
+    return _members;
+}
+
+-(NSMutableArray *)eventCategory{
+    if(!_categories)_categories = [[NSMutableArray alloc] init];
+    return _categories;
 }
 
 + (Class)attendees_class {
     return [UserModel class];
+}
+
++(Class)eventCategory_class{
+    return [EventCategory class];
 }
 
 - (NSDictionary *)map{
@@ -36,8 +48,8 @@ NSString * const EventsResourcesUrl = @"";
     return [NSDictionary dictionaryWithDictionary:map];
 }
 
-+ (void) QuerySingleEvent:(NSInteger)eventIdentifier callBackBlock:(void (^)(EventModel *user, ErrorModel *error))block{
-    [[AFGoPartyApiClient sharedClient] getPathExt:[NSString stringWithFormat:@"%@%dl",@"events/", eventIdentifier] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
++ (void) QuerySingleEvent:(NSString *)eventIdentifier callBackBlock:(void (^)(EventModel *user, ErrorModel *error))block{
+    [[AFGoPartyApiClient sharedClient] getPathExt:[NSString stringWithFormat:@"%@%@",@"events/", eventIdentifier] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
         EventModel *event = [[EventModel alloc] initWithDictionary:JSON];
         if (block) {
             block(event, nil);
@@ -97,8 +109,8 @@ NSString * const EventsResourcesUrl = @"";
         }
     }];
 }
-+ (void) CancelEvent:(NSInteger)envId callBackBlock:(void (^)(ErrorModel *err))block{
-    [[AFGoPartyApiClient sharedClient] deletePathExt:[NSString stringWithFormat:@"%@%dl",@"events/", envId] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
++ (void) CancelEvent:(NSString *)envId callBackBlock:(void (^)(ErrorModel *err))block{
+    [[AFGoPartyApiClient sharedClient] deletePathExt:[NSString stringWithFormat:@"%@%@",@"events/", envId] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
         
         
         if (block) {
@@ -126,8 +138,8 @@ NSString * const EventsResourcesUrl = @"";
         }
     }];
 }
-+ (void) RemoveAttendee:(NSInteger)event attendee:(NSString *)atte callBackBlock:(void (^)(ErrorModel *ErrorModel))block{
-    [[AFGoPartyApiClient sharedClient] deletePathExt:[NSString stringWithFormat:@"events/%dl/invitees/%@",event, atte] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
++ (void) RemoveAttendee:(NSString *)event attendee:(NSString *)atte callBackBlock:(void (^)(ErrorModel *ErrorModel))block{
+    [[AFGoPartyApiClient sharedClient] deletePathExt:[NSString stringWithFormat:@"events/%@/invitees/%@",event, atte] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
         
         
         if (block) {
@@ -140,8 +152,8 @@ NSString * const EventsResourcesUrl = @"";
         }
     }];
 }
-+ (void) AssignSponsor:(NSInteger)event attendee:(NSString *)atte callBackBlock:(void (^)(ErrorModel *ErrorModel))block{
-    [[AFGoPartyApiClient sharedClient] putPathExt:[NSString stringWithFormat:@"events/%dl/sponsors/%@",event, atte] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
++ (void) AssignSponsor:(NSString *)event attendee:(NSString *)atte callBackBlock:(void (^)(ErrorModel *ErrorModel))block{
+    [[AFGoPartyApiClient sharedClient] putPathExt:[NSString stringWithFormat:@"events/%@/sponsors/%@",event, atte] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
         
         if (block) {
             block(nil);
@@ -153,8 +165,8 @@ NSString * const EventsResourcesUrl = @"";
         }
     }];
 }
-+ (void) UpdateParticipationStatus:(NSInteger)event callBackBlock:(void (^)(ErrorModel *ErrorModel))block{
-    [[AFGoPartyApiClient sharedClient] putPathExt:[NSString stringWithFormat:@"events/%dl/participance",event] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
++ (void) UpdateParticipationStatus:(NSString *)event callBackBlock:(void (^)(ErrorModel *ErrorModel))block{
+    [[AFGoPartyApiClient sharedClient] putPathExt:[NSString stringWithFormat:@"events/%@/participance",event] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
         
         if (block) {
             block(nil);
@@ -167,7 +179,7 @@ NSString * const EventsResourcesUrl = @"";
     }];
 }
 + (void) QueryCurrentUserEvents:(EventQueryFilters *)filters callBackBlock:(void (^)(NSArray *events, ErrorModel *error))block{
-    [[AFGoPartyApiClient sharedClient] getPathExt:[NSString stringWithFormat:@"%@",@"events"] parameters:[filters GetQueryString] success:^(AFHTTPRequestOperation *operation, id JSON) {
+    [[AFGoPartyApiClient sharedClient] getPathExt:[NSString stringWithFormat:@"%@",@"myevents"] parameters:[filters GetQueryString] success:^(AFHTTPRequestOperation *operation, id JSON) {
         
         NSMutableArray *mutableEvents = [NSMutableArray arrayWithCapacity:[JSON count]];
         for (NSDictionary *attributes in JSON) {

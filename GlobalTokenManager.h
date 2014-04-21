@@ -17,8 +17,9 @@ extern NSString * const userModelNotification;
 
 -(void) setUpCurrentUserData:(UserModel *)user;
 
-@property(nonatomic, strong, setter = setUser:) UserModel *currentUser;
+@property(nonatomic, strong, setter = setUser:, getter = getUser) UserModel *currentUser;
 
 -(void) setUser: (UserModel *)user;
+-(UserModel *)getUser;
 
 @end

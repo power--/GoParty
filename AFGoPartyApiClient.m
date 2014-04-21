@@ -11,6 +11,7 @@
 #import "GlobalTokenManager.h"
 #import "UserModel.h"
 #import "ErrorModel.h"
+#import "AFJSONUtilities.h"
 
 
 static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/cxf/rest/";
@@ -54,22 +55,7 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
           success:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
           failure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure{
     [self getPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:responseObject];
-        if (err)
-        {
-            if (err.code == 200)
-            {
-                if (success) {
-                    success(operation, err.data);
-                }
-            }
-            else
-            {
-                if (failure) {
-                    failure(operation, err);
-                }
-            }
-        }
+        [self querySuccess:success queryFailure:failure response:responseObject opt:operation];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
             ErrorModel *err = [[ErrorModel alloc] init];
@@ -84,22 +70,7 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
             success:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
             failure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure{
     [self postPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:responseObject];
-        if (err)
-        {
-            if (err.code == 200)
-            {
-                if (success) {
-                    success(operation, err.data);
-                }
-            }
-            else
-            {
-                if (failure) {
-                    failure(operation, err);
-                }
-            }
-        }
+        [self querySuccess:success queryFailure:failure response:responseObject opt:operation];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
             ErrorModel *err = [[ErrorModel alloc] init];
@@ -114,22 +85,7 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
               success:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
               failure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure{
     [self deletePath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:responseObject];
-        if (err)
-        {
-            if (err.code == 200)
-            {
-                if (success) {
-                    success(operation, err.data);
-                }
-            }
-            else
-            {
-                if (failure) {
-                    failure(operation, err);
-                }
-            }
-        }
+        [self querySuccess:success queryFailure:failure response:responseObject opt:operation];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
             ErrorModel *err = [[ErrorModel alloc] init];
@@ -144,22 +100,7 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
            success:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
            failure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure{
     [self putPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:responseObject];
-        if (err)
-        {
-            if (err.code == 200)
-            {
-                if (success) {
-                    success(operation, err.data);
-                }
-            }
-            else
-            {
-                if (failure) {
-                    failure(operation, err);
-                }
-            }
-        }
+        [self querySuccess:success queryFailure:failure response:responseObject opt:operation];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
             ErrorModel *err = [[ErrorModel alloc] init];
@@ -174,22 +115,7 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
              success:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
              failure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure{
     [self patchPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        ErrorModel *err = [[ErrorModel alloc] initWithDictionary:responseObject];
-        if (err)
-        {
-            if (err.code == 200)
-            {
-                if (success) {
-                    success(operation, err.data);
-                }
-            }
-            else
-            {
-                if (failure) {
-                    failure(operation, err);
-                }
-            }
-        }
+        [self querySuccess:success queryFailure:failure response:responseObject opt:operation];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (failure) {
             ErrorModel *err = [[ErrorModel alloc] init];
@@ -197,6 +123,30 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
             failure(operation, err);
         }
     }];
+}
+
+- (void)querySuccess:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
+        queryFailure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure
+       response:(id)responseObject
+            opt:(AFHTTPRequestOperation *)operation{
+    ErrorModel *err = [[ErrorModel alloc] initWithDictionary:responseObject];
+    if (err)
+    {
+        if (err.code == 200)
+        {
+            if (success) {
+                NSData *data = [err.data dataUsingEncoding:NSUTF8StringEncoding];
+                
+                success(operation, AFJSONDecode(data, nil));
+            }
+        }
+        else
+        {
+            if (failure) {
+                failure(operation, err);
+            }
+        }
+    }
 }
 
 @end

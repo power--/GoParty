@@ -7,10 +7,14 @@
 //
 
 #import "GlobalTokenManager.h"
+#import "UserModel.h"
 
 NSString * const userModelNotification = @"com.goparty.user.loaded";
 
 @implementation GlobalTokenManager
+{
+    UserModel *_currentUser;
+}
 
 +(GlobalTokenManager *)sharedInstance{
     static GlobalTokenManager *sharedTokenManager = nil;
@@ -26,7 +30,15 @@ NSString * const userModelNotification = @"com.goparty.user.loaded";
 }
 
 -(void) setUser: (UserModel *)user{
+    _currentUser = user;
     [[NSNotificationCenter defaultCenter] postNotificationName:userModelNotification object:user userInfo:nil];
+}
+
+-(UserModel *)getUser{
+    if (!_currentUser) {
+        _currentUser = [[UserModel alloc] init];
+    }
+    return _currentUser;
 }
 
 @end

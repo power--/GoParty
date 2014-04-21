@@ -26,6 +26,8 @@
 @property(nonatomic, strong) NSString *gender;
 @property(nonatomic, strong) NSString *token;
 @property(nonatomic, strong) NSString *location;
+@property(nonatomic) BOOL admin;
+@property(nonatomic, strong) NSString *participance;
 
 
 + (void)Login:(NSString *)openId usertoken:(NSString *) tokenId usersession:(NSString *)sessionId usermobile:(NSString *)mobile callbackblock:(void(^)(UserModel *user, ErrorModel *error))block;

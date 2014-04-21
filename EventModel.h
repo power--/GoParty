@@ -35,28 +35,27 @@ typedef NS_ENUM(NSInteger, EventVisibility) {
 @interface EventModel : Jastor
 
 @property(nonatomic)NSInteger eventId;
-@property(nonatomic,strong)NSArray *attendees;
-@property(nonatomic,strong)NSArray *refusedAttendees;
+@property(nonatomic,strong)NSMutableArray *members;
 @property(nonatomic,strong)NSString *description;
-@property(nonatomic,strong)NSDate *endtime;
-@property(nonatomic,strong)NSDate *startime;
+@property(nonatomic,strong)NSString *endTime;
+@property(nonatomic,strong)NSString *starTime;
 @property(nonatomic,strong)UserModel *owner;
 @property(nonatomic,strong)NSString *status;
 @property(nonatomic,strong)NSString *title;
 @property(nonatomic,strong)NSString *location;
-@property(nonatomic,strong)EventCategory *eventCategory;
+@property(nonatomic,strong)NSMutableArray *categories;
 @property(nonatomic,strong)NSString *visibility;
 @property(nonatomic)BOOL locationShareable;
 
 
-+ (void) QuerySingleEvent:(NSInteger)eventIdentifier callBackBlock:(void (^)(EventModel *user, ErrorModel *error))block;
++ (void) QuerySingleEvent:(NSString *)eventIdentifier callBackBlock:(void (^)(EventModel *user, ErrorModel *error))block;
 + (void) QueryUserEvents:(NSString *)userId queryFilters:(EventQueryFilters *)filters callBackBlock:(void (^)(NSArray *events, ErrorModel *error))block;
 + (void) QueryCurrentUserEvents:(EventQueryFilters *)filters callBackBlock:(void (^)(NSArray *events, ErrorModel *error))block;
 + (void) UpdateEvent:(EventModel *)eventModel callBackBlock:(void (^)(EventModel *user, ErrorModel *error))block;
 + (void) CreateEvent:(EventModel *)event callBackBlock:(void (^)(EventModel *eve, ErrorModel *err))block;
-+ (void) CancelEvent:(NSInteger)envetId callBackBlock:(void (^)(ErrorModel *err))block;
++ (void) CancelEvent:(NSString *)envetId callBackBlock:(void (^)(ErrorModel *err))block;
 + (void) InviteAttendee:(EventModel *)event attendee:(UserModel *)atte callBackBlock:(void (^)(EventModel *model,ErrorModel *ErrorModel))block;
-+ (void) RemoveAttendee:(NSInteger)event attendee:(NSString *)atte callBackBlock:(void (^)(ErrorModel *ErrorModel))block;
-+ (void) AssignSponsor:(NSInteger)event attendee:(NSString *)atte callBackBlock:(void (^)(ErrorModel *ErrorModel))block;
-+ (void) UpdateParticipationStatus:(NSInteger)eventId callBackBlock:(void (^)(ErrorModel *ErrorModel))block;
++ (void) RemoveAttendee:(NSString *)event attendee:(NSString *)atte callBackBlock:(void (^)(ErrorModel *ErrorModel))block;
++ (void) AssignSponsor:(NSString *)event attendee:(NSString *)atte callBackBlock:(void (^)(ErrorModel *ErrorModel))block;
++ (void) UpdateParticipationStatus:(NSString *)eventId callBackBlock:(void (^)(ErrorModel *ErrorModel))block;
 @end
