@@ -30,10 +30,10 @@
 @property(nonatomic,strong) NSArray *groups;
 
 +(void) addFriend:(NSString *)userId message:(NSString *)applyMessage callback:(void(^)(UserFriendModel *friend, ErrorModel *error))block;
-+(void) getFriendsList:(void(^)(NSArray *friends))block;
++(void) getFriendsList:(void(^)(NSArray *friends, ErrorModel *error))block;
 
-+(void) updateFriendInfo;
++(void) updateFriendInfo:(NSString *)userId callback:(void(^)(UserFriendModel *friends, ErrorModel *error))block;
 
-+(void) deleteFriend;
++(void) deleteFriend:(NSString *)userId callback:(void(^)(ErrorModel *error))block;
 
 @end

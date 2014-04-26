@@ -8,6 +8,8 @@
 
 #import "UserFriendModel.h"
 #import "UserModel.h"
+#import "GoPartyUtilities.h"
+#import "AFGoPartyApiClient.h"
 
 @implementation UserFriendModel
 
@@ -17,11 +19,22 @@
     return [NSDictionary dictionaryWithDictionary:map];
 }
 
-+(void) addFriend:(NSString *)userId message:(NSString *)applyMessage callback:(void(^)(UserFriendModel *friend, ErrorModel *error))block{}
-+(void) getFriendsList:(void(^)(NSArray *friends))block{}
++(void) addFriend:(NSString *)userId message:(NSString *)applyMessage callback:(void(^)(UserFriendModel *friend, ErrorModel *error))block{
+    [[AFGoPartyApiClient sharedClient] postPathExt:[NSString stringWithFormat:@"friends/%@",userId] parameters:[NSDictionary dictionaryWithObjectsAndKeys:applyMessage,@"message",nil] success:^(AFHTTPRequestOperation *operation, id JSON) {
+        
+        if (block) {
+            block(nil,nil);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, ErrorModel *error) {
+        if (block) {
+            block(nil,error);
+        }
+    }];
+}
++(void) getFriendsList:(void(^)(NSArray *friends, ErrorModel *error))block{}
 
-+(void) updateFriendInfo{}
++(void) updateFriendInfo:(NSString *)userId callback:(void(^)(UserFriendModel *friends, ErrorModel *error))block{}
 
-+(void) deleteFriend{}
++(void) deleteFriend:(NSString *)userId callback:(void(^)(ErrorModel *error))block{}
 
 @end

@@ -11,6 +11,8 @@
 #import "../EventModel.h"
 #import "../EventCategory.h"
 #import "../GlobalTokenManager.h"
+#import "../EventMemberModel.h"
+#import "../UserModel.h"
 
 @interface AddActionViewController ()
 
@@ -51,11 +53,15 @@
     event.title = @"goparty supper";
     event.location = @"shenzhen";
     event.description = @"test api";
-    [event.members addObject:[GlobalTokenManager sharedInstance].currentUser];
-    event.owner = [GlobalTokenManager sharedInstance].currentUser;
+    UserModel *currentUser = [GlobalTokenManager sharedInstance].currentUser;
+    EventMemberModel *eventMember = [[EventMemberModel alloc] init];
+    eventMember.userId = currentUser.userId;
+    eventMember.admin = true;
+    [event.members addObject:eventMember];
+    event.owner = eventMember;
     event.status = @"INIT";
     event.visibility = @"V_PUBLIC";
-    event.starTime = @"2014-03-03T07:02:19.266Z";
+    event.startTime = @"2014-03-03T07:02:19.266Z";
     event.endTime = @"2014-03-03T07:02:19.266Z";
     event.locationShareable = false;
     

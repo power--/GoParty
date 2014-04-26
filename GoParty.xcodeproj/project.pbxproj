@@ -152,6 +152,7 @@
 		CA43EEA61902B02700552278 /* TypeSelectorBtn_Black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA43EE911902B02700552278 /* TypeSelectorBtn_Black@2x.png */; };
 		CA43EEA71902B02700552278 /* TypeSelectorBtnHL_Black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA43EE921902B02700552278 /* TypeSelectorBtnHL_Black@2x.png */; };
 		CA5516D418F2807E00CB43EC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5516D318F2807E00CB43EC /* MBProgressHUD.m */; };
+		CAAC74AF190B90D700626D35 /* EventMemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAC74AE190B90D700626D35 /* EventMemberModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -361,6 +362,8 @@
 		CA43EE921902B02700552278 /* TypeSelectorBtnHL_Black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TypeSelectorBtnHL_Black@2x.png"; sourceTree = "<group>"; };
 		CA5516D218F2807E00CB43EC /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		CA5516D318F2807E00CB43EC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CAAC74AD190B90D700626D35 /* EventMemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventMemberModel.h; sourceTree = "<group>"; };
+		CAAC74AE190B90D700626D35 /* EventMemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventMemberModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -726,6 +729,8 @@
 				CA43312D18F452E30073DD35 /* UserFriendModel.m */,
 				CA43312F18F457180073DD35 /* UserFriendGroupModel.h */,
 				CA43313018F457180073DD35 /* UserFriendGroupModel.m */,
+				CAAC74AD190B90D700626D35 /* EventMemberModel.h */,
+				CAAC74AE190B90D700626D35 /* EventMemberModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1023,6 +1028,7 @@
 				AC06EEAC18E99AE400D5281C /* ActionTimeViewController.m in Sources */,
 				CA13B58618D0B8B1009209C9 /* GlobalTokenManager.m in Sources */,
 				CA43313118F457180073DD35 /* UserFriendGroupModel.m in Sources */,
+				CAAC74AF190B90D700626D35 /* EventMemberModel.m in Sources */,
 				AC2D70C8187ED3F000A5D5C9 /* AddressListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

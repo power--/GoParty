@@ -11,17 +11,18 @@
 #import "AFGoPartyApiClient.h"
 #import "ErrorModel.h"
 #import "EventCategory.h"
+#import "EventMemberModel.h"
 
 NSString * const EventsResourcesUrl = @"";
 
 @implementation EventModel
 
--(UserModel *)owner{
-    if(!_owner)_owner = [[UserModel alloc] init];
+-(EventMemberModel *)owner{
+    if(!_owner)_owner = [[EventMemberModel alloc] init];
     return _owner;
 }
 
--(NSMutableArray *)attendees{
+-(NSMutableArray *)members{
     if (!_members) {
         _members = [[NSMutableArray alloc] init];
     }
@@ -29,16 +30,16 @@ NSString * const EventsResourcesUrl = @"";
     return _members;
 }
 
--(NSMutableArray *)eventCategory{
+-(NSMutableArray *)categories{
     if(!_categories)_categories = [[NSMutableArray alloc] init];
     return _categories;
 }
 
-+ (Class)attendees_class {
-    return [UserModel class];
++ (Class)members_class {
+    return [EventMemberModel class];
 }
 
-+(Class)eventCategory_class{
++(Class)categories_class{
     return [EventCategory class];
 }
 
@@ -79,7 +80,7 @@ NSString * const EventsResourcesUrl = @"";
     }];
 }
 + (void) UpdateEvent:(EventModel *)eventModel callBackBlock:(void (^)(EventModel *user, ErrorModel *error))block{
-    [[AFGoPartyApiClient sharedClient] putPathExt:[NSString stringWithFormat:@"%@%dl",@"events/", eventModel.eventId] parameters:[eventModel toDictionary] success:^(AFHTTPRequestOperation *operation, id JSON) {
+    [[AFGoPartyApiClient sharedClient] putPathExt:[NSString stringWithFormat:@"%@%@",@"events/", eventModel.eventId] parameters:[eventModel toDictionary] success:^(AFHTTPRequestOperation *operation, id JSON) {
         EventModel *event = [[EventModel alloc] initWithDictionary:JSON];
         
         if (block) {
@@ -123,8 +124,8 @@ NSString * const EventsResourcesUrl = @"";
         }
     }];
 }
-+ (void) InviteAttendee:(EventModel *)event attendee:(UserModel *)atte callBackBlock:(void (^)(EventModel *model, ErrorModel *ErrorModel))block{
-    [[AFGoPartyApiClient sharedClient] putPathExt:[NSString stringWithFormat:@"events/%dl/invitees/%@",event.eventId, atte.userId] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
++ (void) InviteAttendee:(EventModel *)event attendee:(NSMutableArray *)atte callBackBlock:(void (^)(EventModel *model, ErrorModel *ErrorModel))block{
+    [[AFGoPartyApiClient sharedClient] putPathExt:[NSString stringWithFormat:@"events/%@/invitees/%@",event.eventId, [atte componentsJoinedByString:@";"]] parameters:[[NSDictionary alloc] init] success:^(AFHTTPRequestOperation *operation, id JSON) {
         
         EventModel *event = [[EventModel alloc] initWithDictionary:JSON];
         
