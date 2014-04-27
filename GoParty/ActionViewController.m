@@ -61,7 +61,7 @@
     
     [super viewDidLoad];
     self.filters.scope = @"self";
-    self.filters.limits = 10;
+    self.filters.limit = 10;
     MBProgressHUD *progressBar = [GoPartyUtilities GenerateProgressHud:@"加载中..." subtitle:@"" view:self.view];
     
     [EventModel QueryCurrentUserEvents:self.filters callBackBlock:^(NSArray *events, ErrorModel *error) {
@@ -106,7 +106,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.actionList count];
+    return [self.actionList count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

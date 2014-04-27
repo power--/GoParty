@@ -16,10 +16,10 @@ static NSString *parameterSeperator = @"|";
 
 @implementation EventQueryFilters
 
-//@synthesize offset,searchKeys,sponsors,after,before,categories,limits;
+//@synthesize offset,searchKeys,sponsors,after,before,categories,limit;
 
 -(NSDictionary *)GetQueryString{
-    NSMutableDictionary *queryStrs = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:self.offset],@"offset",[NSNumber numberWithInteger:self.limits],@"limit", nil];
+    NSMutableDictionary *queryStrs = [NSMutableDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:self.offset],@"offset",[NSNumber numberWithInteger:self.limit],@"limit", nil];
     if (self.before) {
         [queryStrs setValue:self.before forKey:@"before"];
     }
@@ -30,16 +30,16 @@ static NSString *parameterSeperator = @"|";
         [queryStrs setValue:self.scope forKey:@"scope"];
     }
     
-    NSString *searchKeyStrs = [self GetQueryStringFromArray:self.searchKeys];
-    NSString *sponsorsStrs = [self GetQueryStringFromArray:self.sponsors];
+    NSString *searchKeyStrs = [self GetQueryStringFromArray:self.search];
+    //NSString *sponsorsStrs = [self GetQueryStringFromArray:self.sponsors];
     NSString *categoriesStrs = [self GetQueryStringFromArray:self.categories];
     if (searchKeyStrs) {
         [queryStrs setValue:searchKeyStrs forKey:@"search"];
     }
     
-    if (sponsorsStrs) {
-        [queryStrs setValue:sponsorsStrs forKey:@"sponsors"];
-    }
+//    if (sponsorsStrs) {
+//        [queryStrs setValue:sponsorsStrs forKey:@"sponsors"];
+//    }
     
     if (categoriesStrs) {
         [queryStrs setValue:categoriesStrs forKey:@"categories"];

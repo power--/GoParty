@@ -22,7 +22,7 @@
 @property(nonatomic, strong) NSString *signature;
 @property(nonatomic, strong) NSString *weChat;
 @property(nonatomic, strong) NSString *weibo;
-@property(nonatomic, strong) NSString *birthdate;
+@property(nonatomic) NSTimeInterval birthdate;
 @property(nonatomic, strong) NSString *gender;
 @property(nonatomic, strong) NSString *token;
 @property(nonatomic, strong) NSString *location;

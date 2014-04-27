@@ -12,11 +12,10 @@
 @property(nonatomic,strong) NSString *scope;
 @property(nonatomic,strong) NSString *after;
 @property(nonatomic,strong) NSString *before;
-@property(nonatomic,strong) NSArray *sponsors;
-@property(nonatomic,strong) NSArray *categories;
-@property(nonatomic,strong) NSArray *searchKeys;
+@property(nonatomic,strong) NSMutableArray *categories;
+@property(nonatomic,strong) NSMutableArray *search;
 @property(nonatomic) NSInteger offset;
-@property(nonatomic) NSInteger limits;
+@property(nonatomic) NSInteger limit;
 
 -(NSDictionary *)GetQueryString;
 //-(NSString *)GetQueryString;

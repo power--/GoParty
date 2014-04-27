@@ -37,8 +37,8 @@ typedef NS_ENUM(NSInteger, EventVisibility) {
 @property(nonatomic, strong)NSString *eventId;
 @property(nonatomic,strong)NSMutableArray *members;
 @property(nonatomic,strong)NSString *description;
-@property(nonatomic,strong)NSString *endTime;
-@property(nonatomic,strong)NSString *startTime;
+@property(nonatomic)NSTimeInterval endTime;
+@property(nonatomic)NSTimeInterval startTime;
 @property(nonatomic,strong)EventMemberModel *owner;
 @property(nonatomic,strong)NSString *status;
 @property(nonatomic,strong)NSString *title;

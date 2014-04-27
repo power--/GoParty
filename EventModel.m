@@ -180,7 +180,7 @@ NSString * const EventsResourcesUrl = @"";
     }];
 }
 + (void) QueryCurrentUserEvents:(EventQueryFilters *)filters callBackBlock:(void (^)(NSArray *events, ErrorModel *error))block{
-    [[AFGoPartyApiClient sharedClient] getPathExt:[NSString stringWithFormat:@"%@",@"myevents"] parameters:[filters GetQueryString] success:^(AFHTTPRequestOperation *operation, id JSON) {
+    [[AFGoPartyApiClient sharedClient] getPathExt:[NSString stringWithFormat:@"%@",@"events"] parameters:[filters GetQueryString] success:^(AFHTTPRequestOperation *operation, id JSON) {
         
         NSMutableArray *mutableEvents = [NSMutableArray arrayWithCapacity:[JSON count]];
         for (NSDictionary *attributes in JSON) {

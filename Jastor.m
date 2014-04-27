@@ -60,6 +60,7 @@ Class nsArrayClass;
 				
 				value = childObjects;
 			}
+            
 			// handle all others
 			[self setValue:value forKey:key];
 		}

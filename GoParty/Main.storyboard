@@ -986,7 +986,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="穿越东西冲" borderStyle="roundedRect" placeholder="    活动名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UEp-Wu-BbP">
+                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="    活动名称" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UEp-Wu-BbP">
                                             <rect key="frame" x="20" y="7" width="280" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1003,7 +1003,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="    东西冲" borderStyle="roundedRect" placeholder="    地址" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ji-js-4c1">
+                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="    地址" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Ji-js-4c1">
                                             <rect key="frame" x="20" y="7" width="280" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1046,14 +1046,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <rect key="frame" x="25" y="39" width="15" height="15"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2014-04-28  周六  09:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiN-od-yiK">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiN-od-yiK">
                                             <rect key="frame" x="85" y="12" width="180" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2014-04-28  周六  09:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYu-KI-1w4">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYu-KI-1w4">
                                             <rect key="frame" x="85" y="36" width="180" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -1071,7 +1071,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="    户外\交友" borderStyle="roundedRect" placeholder="    活动类型" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ppI-NX-NFx">
+                                        <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="    活动类型" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ppI-NX-NFx">
                                             <rect key="frame" x="20" y="7" width="280" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1122,7 +1122,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhW-iF-S3n">
                                             <rect key="frame" x="25" y="20" width="270" height="140"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <string key="text">东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！</string>
                                             <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -1315,6 +1314,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="475"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmL-eW-jLm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

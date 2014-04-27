@@ -7,13 +7,25 @@
 //
 
 #import "ActionMainDetailViewController.h"
-
+#import "../EventModel.h"
+#import "../ErrorModel.h"
+#import "../GoPartyUtilities.h"
 
 @interface ActionMainDetailViewController ()
+
+@property(nonatomic,strong) EventModel *currentEvent;
 
 @end
 
 @implementation ActionMainDetailViewController
+
+-(EventModel *)currentEvent{
+    if (!_currentEvent) {
+        _currentEvent = [[EventModel alloc] init];
+    }
+    
+    return _currentEvent;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,12 +40,26 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    MBProgressHUD *progressbar = [GoPartyUtilities GenerateProgressHud:@"加载中..." subtitle:@"" view:self.view];
+    [EventModel QuerySingleEvent:@"32" callBackBlock:^(EventModel *eve, ErrorModel *error) {
+        [progressbar hide:true];
+        if (error) {
+            
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:@"加载错误。" delegate:nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
+        }
+        else
+        {
+            self.currentEvent = eve;
+            [self.tableView reloadData];
+        }
+    }];    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 
 /*
@@ -65,7 +91,7 @@
     NSString *CellIdentifier = [NSString stringWithFormat:@"DetailActionCell%d", row + 1];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if (row == 2 || row == 5) {
-        NSString *str = @"东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！";
+        NSString *str = self.currentEvent.description;
         UIFont *font = [UIFont systemFontOfSize:12];
         CGSize contentSize = [str sizeWithFont:font constrainedToSize:CGSizeMake(270.0f, 20000.0f) lineBreakMode:NSLineBreakByWordWrapping];
         CGRect frame = CGRectMake(20, 5, 280, row == 2 ? 60 : contentSize.height + 10 + 30);
@@ -77,6 +103,26 @@
         [cell.contentView addSubview:textField];
         [cell.contentView sendSubviewToBack:textField];
     }
+    if(row == 0)
+    {
+        UITextField *textField = (UITextField*)[cell.contentView viewWithTag:1];
+        textField.text = [NSString stringWithFormat:@"    %@", self.currentEvent.title];
+    }
+    if(row == 1)
+    {
+        UITextField *textField = (UITextField*)[cell.contentView viewWithTag:1];
+        textField.text = [NSString stringWithFormat:@"    %@", self.currentEvent.location];
+    }
+    if (row == 2) {
+        UILabel *textField = (UILabel*)[cell.contentView viewWithTag:2];
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:self.currentEvent.startTime];
+        textField.text = [NSString stringWithFormat:@"    %@", date];
+        
+        UILabel *textField2 = (UILabel*)[cell.contentView viewWithTag:3];
+        NSDate *date2 = [NSDate dateWithTimeIntervalSince1970:self.currentEvent.endTime];
+        textField2.text = [NSString stringWithFormat:@"    %@", date2];
+    }
+    
     // Configure the cell...
     
     
@@ -90,7 +136,7 @@
         return 70;
     }
     else if (row == 5){
-        NSString *str = @"东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！东西冲！！！";
+        NSString *str = self.currentEvent.description;
         UIFont *font = [UIFont systemFontOfSize:12];
         CGSize contentSize = [str sizeWithFont:font constrainedToSize:CGSizeMake(270.0f, 20000.0f) lineBreakMode:NSLineBreakByWordWrapping];
         return contentSize.height + 10 + 30 + 10;

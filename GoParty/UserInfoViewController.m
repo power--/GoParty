@@ -7,12 +7,26 @@
 //
 
 #import "UserInfoViewController.h"
+#import "../UserModel.h"
+#import "../ErrorModel.h"
+#import "../GoPartyUtilities.h"
 
 @interface UserInfoViewController ()
+
+@property(nonatomic, strong)UserModel *user;
 
 @end
 
 @implementation UserInfoViewController
+
+-(UserModel *)user
+{
+    if (!_user) {
+        _user = [[UserModel alloc] init];
+    }
+    
+    return _user;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,6 +41,8 @@
 {
     [self.navigationController setTitle:@"个人信息"];
     [super viewDidLoad];
+    
+    MBProgressHUD *progressBar = [GoPartyUtilities GenerateProgressHud:@"加载中..." subtitle:@"" view:self.view];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -34,6 +50,16 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    [UserModel FindUser:@"167" callbackblock:^(UserModel *user, ErrorModel *error) {
+        [progressBar hide:true];
+        if (error) {
+            [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:@"加载错误。" delegate:nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
+        }
+        else{
+            self.user = user;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -95,15 +121,15 @@
             switch (row) {
                 case 1:
                     [cell.textLabel setText:@"昵称"];
-                    [cell.detailTextLabel setText:@"报纸山药"];
+                    [cell.detailTextLabel setText:self.user.nickName];
                     break;
                 case 2:
                     [cell.textLabel setText:@"手机号"];
-                    [cell.detailTextLabel setText:@""];
+                    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%d", self.user.phone]];
                     break;
                 case 3:
                     [cell.textLabel setText:@"出生日期"];
-                    [cell.detailTextLabel setText:@""];
+                    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%@",[NSDate dateWithTimeIntervalSince1970:self.user.birthdate]]];
                     break;
                 default:
                     break;
@@ -112,15 +138,15 @@
             switch (row) {
                 case 0:
                     [cell.textLabel setText:@"性别"];
-                    [cell.detailTextLabel setText:@"女"];
+                    [cell.detailTextLabel setText:self.user.gender];
                     break;
                 case 1:
                     [cell.textLabel setText:@"地区"];
-                    [cell.detailTextLabel setText:@"北京 昌平"];
+                    [cell.detailTextLabel setText:self.user.location];
                     break;
                 case 2:
                     [cell.textLabel setText:@"个性签名"];
-                    [cell.detailTextLabel setText:@"2012年的第一场雪。"];
+                    [cell.detailTextLabel setText:self.user.signature];
                     break;
                 default:
                     break;
@@ -129,11 +155,11 @@
             switch (row) {
                 case 0:
                     [cell.textLabel setText:@"QQ账号"];
-                    [cell.detailTextLabel setText:@""];
+                    [cell.detailTextLabel setText:[NSString stringWithFormat:@"%d", self.user.qq]];
                     break;
                 case 1:
                     [cell.textLabel setText:@"微信账号"];
-                    [cell.detailTextLabel setText:@""];
+                    [cell.detailTextLabel setText:self.user.weChat];
                     break;
                 default:
                     break;

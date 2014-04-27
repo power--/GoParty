@@ -61,8 +61,8 @@
     event.owner = eventMember;
     event.status = @"INIT";
     event.visibility = @"V_PUBLIC";
-    event.startTime = @"2014-03-03T07:02:19.266Z";
-    event.endTime = @"2014-03-03T07:02:19.266Z";
+    event.startTime = [[NSDate date] timeIntervalSince1970];
+    event.endTime = [[NSDate date] timeIntervalSince1970];
     event.locationShareable = false;
     
     MBProgressHUD *progressBar = [GoPartyUtilities GenerateProgressHud:@"生成中..." subtitle:@"" view:self.view];
