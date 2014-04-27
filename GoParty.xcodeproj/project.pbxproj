@@ -153,6 +153,7 @@
 		CA43EEA71902B02700552278 /* TypeSelectorBtnHL_Black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA43EE921902B02700552278 /* TypeSelectorBtnHL_Black@2x.png */; };
 		CA5516D418F2807E00CB43EC /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5516D318F2807E00CB43EC /* MBProgressHUD.m */; };
 		CAAC74AF190B90D700626D35 /* EventMemberModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAAC74AE190B90D700626D35 /* EventMemberModel.m */; };
+		CAD1D0B8190D4A7100C32E0B /* UserFriendInvitation.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD1D0B7190D4A7100C32E0B /* UserFriendInvitation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -364,6 +365,8 @@
 		CA5516D318F2807E00CB43EC /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		CAAC74AD190B90D700626D35 /* EventMemberModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventMemberModel.h; sourceTree = "<group>"; };
 		CAAC74AE190B90D700626D35 /* EventMemberModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventMemberModel.m; sourceTree = "<group>"; };
+		CAD1D0B6190D4A7100C32E0B /* UserFriendInvitation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFriendInvitation.h; sourceTree = "<group>"; };
+		CAD1D0B7190D4A7100C32E0B /* UserFriendInvitation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFriendInvitation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -731,6 +734,8 @@
 				CA43313018F457180073DD35 /* UserFriendGroupModel.m */,
 				CAAC74AD190B90D700626D35 /* EventMemberModel.h */,
 				CAAC74AE190B90D700626D35 /* EventMemberModel.m */,
+				CAD1D0B6190D4A7100C32E0B /* UserFriendInvitation.h */,
+				CAD1D0B7190D4A7100C32E0B /* UserFriendInvitation.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1012,6 +1017,7 @@
 				CA13B57218D0ADB5009209C9 /* AFImageRequestOperation.m in Sources */,
 				CA13B59D18D746CB009209C9 /* EventMessage.m in Sources */,
 				CA13B57918D0ADB5009209C9 /* UIImageView+AFNetworking.m in Sources */,
+				CAD1D0B8190D4A7100C32E0B /* UserFriendInvitation.m in Sources */,
 				CA13B57118D0ADB5009209C9 /* AFHTTPRequestOperation.m in Sources */,
 				CA13B57518D0ADB5009209C9 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				AC12F95A18C22473000FAC58 /* MapTipView.m in Sources */,

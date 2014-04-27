@@ -48,6 +48,8 @@
             [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil) message:error.data delegate:nil cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"OK", nil), nil] show];
         }else{
             self.caregoriesList = categories;
+            UICollectionView *collectionView = (UICollectionView*)[self.view viewWithTag:1];
+            [collectionView reloadData];
         }
     }];
 }
@@ -87,8 +89,8 @@
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:indetifier forIndexPath:indexPath];
     EventCategory *category = (EventCategory *)[self.caregoriesList objectAtIndex:indexPath.section *1 + indexPath.row];
     UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
-    imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:category.logo]]];
-    
+    //imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:category.logo]]];
+    imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png"]]];
     UILabel *label = (UILabel *)[cell viewWithTag:2];
     label.text = category.name;
     return cell;

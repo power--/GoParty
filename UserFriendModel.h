@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UserModel.h"
+#import "EventQueryFilters.h"
 #import "Jastor.h"
 
 @interface UserFriendModel : Jastor
@@ -32,8 +33,14 @@
 +(void) addFriend:(NSString *)userId message:(NSString *)applyMessage callback:(void(^)(UserFriendModel *friend, ErrorModel *error))block;
 +(void) getFriendsList:(void(^)(NSArray *friends, ErrorModel *error))block;
 
-+(void) updateFriendInfo:(NSString *)userId callback:(void(^)(UserFriendModel *friends, ErrorModel *error))block;
++(void) updateFriendInfo:(NSString *)userId friend:(UserFriendModel *)targetFriend callback:(void(^)(UserFriendModel *friends, ErrorModel *error))block;
 
 +(void) deleteFriend:(NSString *)userId callback:(void(^)(ErrorModel *error))block;
+
++(void) getUnRepondedInvitations:(EventQueryFilters *)filters callback:(void*(^)(NSArray *invitations,ErrorModel *error))block;
+
++(void) replyInvitation:(BOOL)accept responseMsg:(NSString *)message callback:(void*(^)(ErrorModel *error))block;
+
++(void) getRespondedInvitations:(EventQueryFilters *)filters callback:(void*(^)(NSArray *invitations,ErrorModel *error))block;
 
 @end

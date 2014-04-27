@@ -52,7 +52,7 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
 
 -(void)getPathExt:(NSString *)path
        parameters:(NSDictionary *)parameters
-          success:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
+          success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
           failure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure{
     [self getPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self querySuccess:success queryFailure:failure response:responseObject opt:operation];
@@ -67,7 +67,7 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
 
 - (void)postPathExt:(NSString *)path
          parameters:(NSDictionary *)parameters
-            success:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
+            success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
             failure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure{
     [self postPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self querySuccess:success queryFailure:failure response:responseObject opt:operation];
@@ -82,7 +82,7 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
 
 - (void)deletePathExt:(NSString *)path
            parameters:(NSDictionary *)parameters
-              success:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
+              success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
               failure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure{
     [self deletePath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self querySuccess:success queryFailure:failure response:responseObject opt:operation];
@@ -97,7 +97,7 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
 
 - (void)putPathExt:(NSString *)path
         parameters:(NSDictionary *)parameters
-           success:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
+           success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
            failure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure{
     [self putPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self querySuccess:success queryFailure:failure response:responseObject opt:operation];
@@ -112,7 +112,7 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
 
 - (void)patchPathExt:(NSString *)path
           parameters:(NSDictionary *)parameters
-             success:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
+             success:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
              failure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure{
     [self patchPath:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self querySuccess:success queryFailure:failure response:responseObject opt:operation];
@@ -125,7 +125,7 @@ static NSString * const gopartyAPIBaseURLString = @"http://goparty.cloudapp.net/
     }];
 }
 
-- (void)querySuccess:(void (^)(AFHTTPRequestOperation *operation, NSString *responseObject))success
+- (void)querySuccess:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success
         queryFailure:(void (^)(AFHTTPRequestOperation *operation, ErrorModel *error))failure
        response:(id)responseObject
             opt:(AFHTTPRequestOperation *)operation{
